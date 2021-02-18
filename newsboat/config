@@ -1,0 +1,63 @@
+# Newsboat Config File
+# https://newsboat.org/releases/2.10/docs/newsboat.html
+
+refresh-on-startup yes 				# Self explanatory
+reload-time 5 					# Reload interval in minutes
+reload-threads 100				# Multiple feeds reload at once
+save-path "~/Downloads" 			# The path where articles are saved to. If an invalid path is specified, the current directory is used.
+browser "open %u"				# Command for opening links
+datetime-format "%m-%d %R" 			# Self-explanatory
+feedlist-title-format "Feeds (%u/%t)" 		# Format of the title in feed list. See "Format Strings" section of Newsboat manual for details on available formats.
+show-title-bar no
+keep-articles-days 60
+always-display-description yes
+download-full-page yes
+goto-next-feed no
+refresh-on-startup yes
+scrolloff 1
+suppress-first-reload yes
+bind-key ESC quit
+# Color chart link:
+# http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
+
+color listfocus color15 color1 				# Selected read feed item
+color listfocus_unread color15 color1 bold 		# Selected unread feed item
+# color info color15 color32
+color info color15 default standout				# The bars at the top and bottom
+# color background default default invis 			# Transparent background
+
+# color listnormal cyan default
+# color listfocus black yellow standout bold
+# color listnormal_unread blue default
+# color listfocus_unread yellow default bold
+# color info red black bold
+color article white default
+
+highlight all "==.*==" red default
+highlight feedlist ".*(0/0))" black
+highlight article "^(Feed:|Title:|Author:|Date:|Link:)" green default bold
+# highlight article "\[[[0-9]\]" default default bold
+highlight article " @[^ ]+" default default bold
+highlight article "https?://[^ ]+" color33 default
+
+
+# ignore-article "https://reddit.com/r/yorku.rss" "content =~ \"Econ|Soci|Biol\""  
+ignore-article "https://reddit.com/r/opendirectories.rss" "content =~ \"Google\""  
+
+unbind-key A
+unbind-key a
+unbind-key b
+unbind-key C
+unbind-key O
+unbind-key o
+unbind-key Q
+unbind-key q 
+unbind-key R
+unbind-key r 
+bind-key LEFT quit
+bind-key RIGHT open 
+bind-key q hard-quit
+bind-key r reload-all
+bind-key a mark-feed-read
+bind-key A mark-all-feeds-read
+bind-key o open-in-browser-and-mark-read

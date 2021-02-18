@@ -1,0 +1,63 @@
+[2021-02-16 12:52:52] [info] asio async_connect error: system:61 (Connection refused)
+[2021-02-16 12:52:52] [info] Error getting remote endpoint: system:22 (Invalid argument)
+[2021-02-16 12:52:52] [error] handle_connect error: Underlying Transport Error
+[mp3float @ 0x7fb9af81e000] Header missing
+[mp3float @ 0x7fb9af81e000] Could not update timestamps for skipped samples.
+[mp3float @ 0x7fb9af81e000] Header missing
+[aac @ 0x7fb9af0dca00] Could not update timestamps for skipped samples.
+[aac @ 0x7fb9af0c3000] Could not update timestamps for skipped samples.
+[aac @ 0x7fb9af0c5600] Could not update timestamps for skipped samples.
+[aac @ 0x7fb9b1061600] Could not update timestamps for skipped samples.
+[aac @ 0x7fb9b105b800] Could not update timestamps for skipped samples.
+[mp3float @ 0x7fb9af152e00] Header missing
+[mp3float @ 0x7fb9af152e00] Header missing
+[mp3float @ 0x7fb9b1061c00] Header missing
+[mp3float @ 0x7fb9b1061c00] Header missing
+[mp3float @ 0x7fb9b100b200] Header missing
+[mp3float @ 0x7fb9b100b200] Header missing
+[mp3float @ 0x7fb9b100b200] Could not update timestamps for skipped samples.
+[mp3float @ 0x7fb9af07a000] Header missing
+[mp3float @ 0x7fb9af07a000] Header missing
+[mp3float @ 0x7fb9af07a000] Could not update timestamps for skipped samples.
+[mp3float @ 0x7fb9af164c00] Header missing
+[mp3float @ 0x7fb9af164c00] Could not update timestamps for skipped samples.
+[mp3float @ 0x7fb9af09e200] Header missing
+[mp3float @ 0x7fb9af09e200] Could not update timestamps for skipped samples.
+[mp3float @ 0x7fb9af866a00] Header missing
+[mp3float @ 0x7fb9af866a00] Could not update timestamps for skipped samples.
+[mp3float @ 0x7fb9b1808200] Header missing
+[mp3float @ 0x7fb9b1808200] Could not update timestamps for skipped samples.
+[mp3float @ 0x7fb9af067000] Header missing
+[mp3float @ 0x7fb9af067000] Could not update timestamps for skipped samples.
+[mp3float @ 0x7fb9af165800] Header missing
+[mp3float @ 0x7fb9af165800] Could not update timestamps for skipped samples.
+[mp3float @ 0x7fb9af0e2800] Header missing
+[mp3float @ 0x7fb9af0e2800] Could not update timestamps for skipped samples.
+[mp3float @ 0x7fb9af893800] Header missing
+[mp3float @ 0x7fb9af893800] Could not update timestamps for skipped samples.
+[mp3float @ 0x7fb9b080d000] Header missing
+[mp3float @ 0x7fb9b080d000] Could not update timestamps for skipped samples.
+[mp3float @ 0x7fb9b1062e00] Header missing
+[mp3float @ 0x7fb9b1062e00] Could not update timestamps for skipped samples.
+[mp3float @ 0x7fb9b080d000] Could not update timestamps for discarded samples.
+[mp3float @ 0x7fb9b3050400] Header missing
+[mp3float @ 0x7fb9b3050400] Could not update timestamps for skipped samples.
+[mp3float @ 0x7fb9b1062e00] Could not update timestamps for discarded samples.
+[mp3float @ 0x7fb9af0c4e00] Header missing
+[mp3float @ 0x7fb9af0c4e00] Could not update timestamps for skipped samples.
+[mp3float @ 0x7fb9b3050400] Could not update timestamps for discarded samples.
+[mp3float @ 0x7fb9af075c00] Header missing
+[mp3float @ 0x7fb9af075c00] Could not update timestamps for skipped samples.
+[mp3float @ 0x7fb9af0c4e00] Could not update timestamps for discarded samples.
+[mp3float @ 0x7fb9af076200] Header missing
+[mp3float @ 0x7fb9af076200] Could not update timestamps for skipped samples.
+[mp3float @ 0x7fb9af075c00] Could not update timestamps for discarded samples.
+[mp3float @ 0x7fb9af09c400] Header missing
+[mp3float @ 0x7fb9af09c400] Could not update timestamps for skipped samples.
+[mp3float @ 0x7fb9af076200] Could not update timestamps for discarded samples.
+[mp3float @ 0x7fb9af078600] Header missing
+[mp3float @ 0x7fb9af078600] Could not update timestamps for skipped samples.
+[mp3float @ 0x7fb9af09c400] Could not update timestamps for discarded samples.
+[mp3float @ 0x7fb9b08d4c00] Header missing
+[mp3float @ 0x7fb9b08d4c00] Could not update timestamps for skipped samples.
+[2021-02-16 13:18:23] [error] handle_read_frame error: websocketpp.transport:7 (End of File)
