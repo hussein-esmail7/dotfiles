@@ -22,6 +22,13 @@ pacman -S ffmpeg
 pacman -S vivaldi                       # My default browser
 pacman -S python
 pacman -S youtube-dl
+pacman -S snapd                         # Install snapd store
+
+# Setup snapd
+systemctl enable --now snapd.socket
+ln -s /var/lib/snapd/snap /snap
+
+snap install teams-for-linux            # Install Microsoft Teams
 
 # Other apps I would still need to install (terminal installation commands not found)
 # megasync
