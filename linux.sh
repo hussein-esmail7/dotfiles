@@ -28,6 +28,7 @@ pacman -S snapd                         # Install snapd store
 systemctl enable --now snapd.socket
 ln -s /var/lib/snapd/snap /snap
 
+# https://snapcraft.io
 snap install teams-for-linux            # Install Microsoft Teams
 
 # Other apps I would still need to install (terminal installation commands not found)

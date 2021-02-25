@@ -46,6 +46,7 @@ brew -q install whatsapp
 brew -q install zoomus
 brew -q install terminal-notifier
 brew -q install awk
+brew -q install node
 
 # Install python libraries I use
 python3 -m pip install base64
@@ -118,3 +119,7 @@ ln -s -f /usr/local/bin/python3.9 /usr/local/bin/python
 # Installing youtube-dl
 sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl 
 sudo chmod a+rx /usr/local/bin/youtube-dl 
+
+# Installing ffmpeg-progressbar-cli
+# https://github.com/sidneys/ffmpeg-progressbar-cli
+npm install --global ffmpeg-progressbar-cli
