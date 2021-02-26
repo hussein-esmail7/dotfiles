@@ -1,0 +1,14 @@
+// Place your key bindings in this file to override the defaults
+// Toggle between terminal and editor focus
+[
+    {
+        "key": "alt+cmd+m",
+        "command": "-latex-workshop.toggleMathPreviewPanel",
+        "when": "!config.latex-workshop.bind.altKeymap.enabled && editorLangId =~ /latex|rsweave|jlweave/"
+    },
+    {
+        "key": "cmd+l alt+m",
+        "command": "-latex-workshop.toggleMathPreviewPanel",
+        "when": "config.latex-workshop.bind.altKeymap.enabled && editorLangId =~ /latex|rsweave|jlweave/"
+    }
+]

@@ -1,0 +1,76 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "python.pythonPath": "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "python.showStartPage": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "sonarlint.rules": {
+        "java:S2093": {
+            "level": "off"
+        },
+        "java:S2259": {
+            "level": "off"
+        },
+        "python:S125": {
+            "level": "off"
+        },
+        "python:S5754": {
+            "level": "off"
+        },
+        "python:S3776": {
+            "level": "off"
+        },
+        "python:S5797": {
+            "level": "off"
+        },
+        "java:S1192": {
+            "level": "off"
+        },
+        "java:S106": {
+            "level": "off"
+        }
+    },
+    "python.languageServer": "Pylance",
+    "workbench.colorTheme": "Visual Studio Dark",
+    "C_Cpp.intelliSenseEngine": "Tag Parser",
+    "[html]": {
+        "editor.defaultFormatter": "mohd-akram.vscode-html-format"
+    },
+    "C_Cpp.updateChannel": "Insiders",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "latex-utilities.message.update.show": false,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-utilities.countWord.format": "${words} Words",
+    "latex.server.autoDownload": true,
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.view.pdf.invertMode.enabled": "auto",
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.fdb_latexmk",
+        "*.fls",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.idx",
+        "*.ind",
+        "*.ist",
+        "*.lof",
+        "*.log",
+        "*.lot",
+        "*.out",
+        "*.synctex.gz",
+        "*.toc"
+    ],
+    "todo-tree.tree.showScanModeButton": false
+}
