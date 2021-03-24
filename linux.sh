@@ -21,18 +21,27 @@ pacman -S zoom
 pacman -S vlc
 pacman -S gimp
 pacman -S code                          # VS Code
-pacman -S calibre
 pacman -S discord
 pacman -S youtube-dl
 pacman -S snapd                         # Install snapd store
 pacman -S brave                         # Default browser
 pacman -S calibre                       # ebook manager
 pacman -S chromium                      # For when Brave doesn't work
-pacman -S lollypop                      # Music player
 pacman -S neofetch
-pacman -S obs-studio                    # Screen record
+pacman -S obs-studio                    # Screen recording software
 pacman -S thunderbird                   # Email client
 pacman -S yay-git                       # For AUR
+pacman -S mlocate                       # For 'locate' command
+pacman -S unrar
+pacman -S foobar
+pacman -S sxhkd                         # Mapping hotkey software
+pacman -S kitty                         # Printing images in terminal
+pacman -S xorg-xev                      # 'xev' command for monitoring keypresses
+pacman -S rhythmbox                     # Music player
+pacman -S toilet                        # Cool terminal fonts
+
+pacman -Syu # Upgrade all pacman packages
+
 
 # Setup snapd
 systemctl enable --now snapd.socket
@@ -41,13 +50,16 @@ ln -s /var/lib/snapd/snap /snap
 # https://snapcraft.io
 snap install teams-for-linux            # Install Microsoft Teams
 
-sudo git clone https://aur.archlinux.org/yay-git.git
+git clone https://aur.archlinux.org/yay-git.git
 sudo chown -R tecmint:tecmint ./yay-git
 cd yay-git
 makepkg -si
-sudo yay -Syu # Upgrade all yay packages
-sudo pacman -Syu # Upgrade all pacman packages
-sudo yay -S gparted
+yay -Syu # Upgrade all yay packages
+yay -S gparted
+yay -S musikcube
+
+git config --global user.email "hussein.esmail7@gmail.com"
+git config --global user.name "Hussein Esmail"
 
 
 # Other apps I would still need to install (terminal installation commands not found)
