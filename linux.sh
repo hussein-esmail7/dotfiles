@@ -4,6 +4,12 @@
 # This has not been tested before, so keep that in mind if you intend to use this
 # If you see anything that can be improved/fixed, please create a pull request :)
 
+# Directory this file is being run from
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+ln -s "$DIR/vimrc" "~/.vimrc" # Make symlink of vimrc to home directory
+# Did it this way so that when git updates it, it auto-updates the current vim too
+
 echo -n "Email for git: "
 read GIT_EMAIL
 
