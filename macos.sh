@@ -12,6 +12,8 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 sudo easy_install pip
 
 # Install homebrew packages and apps
+brew tap makeworld-the-better-one/tap # Used to install amfora
+brew -q install amfora
 brew -q install cmatrix
 brew -q install bash
 brew -q install newsboat
