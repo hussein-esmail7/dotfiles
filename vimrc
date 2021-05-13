@@ -1,4 +1,10 @@
-" .vimrc
+"
+"                  ▀                        
+"         ▄   ▄  ▄▄▄    ▄▄▄▄▄   ▄ ▄▄   ▄▄▄  
+"         ▀▄ ▄▀    █    █ █ █   █▀  ▀ █▀  ▀ 
+"          █▄█     █    █ █ █   █     █     
+"    █      █    ▄▄█▄▄  █ █ █   █     ▀█▄▄▀ 
+"
 " :so % sources the current file
 
 syntax on
@@ -16,6 +22,10 @@ set incsearch		" Highlight items as they are searched
 set scrolloff=3
 set signcolumn=yes	" Used for symbols in displaying error symbols, etc
 set linebreak		" New line only on new words, not in the middle of words
+set showtabline=2	" Always show tabline
+set spelllang=en_ca
+set cursorline
+
 set showcmd
 set ruler			" Shows the column and row num the cursor is on
 set splitbelow
@@ -34,15 +44,46 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " map <Caps_Lock> <ESC>
 
-" Customizing statusbar
-set laststatus=2			" 0 if you want to disable it
+" =============================================================================
+" === Status Line ============================================================
+" =============================================================================
+
+let g:currentmode={
+      \ 'n'  : 'Normal ',
+      \ 'no' : 'N·Operator Pending ',
+      \ 'v'  : 'Visual ',
+      \ 'V'  : 'V·Line ',
+      \ 'x22' : 'V·Block ',
+      \ 's'  : 'Select ',
+      \ 'S'  : 'S·Line ',
+      \ 'x19' : 'S·Block ',
+      \ 'i'  : 'Insert ',
+      \ 'R'  : 'R ',
+      \ 'Rv' : 'V·Replace ',
+      \ 'c'  : 'Command ',
+      \ 'cv' : 'Vim Ex ',
+      \ 'ce' : 'Ex ',
+      \ 'r'  : 'Prompt ',
+      \ 'rm' : 'More ',
+      \ 'r?' : 'Confirm ',
+      \ '!'  : 'Shell ',
+      \ 't'  : 'Terminal '
+      \}
+
+set laststatus=2			" Always show status line (0 to disable)
 set statusline=				" Reset what is stored there
+set statusline+=%0*\ %{toupper(g:currentmode[mode()])}   " Current mode
 set statusline+=%F			" File path to current file
 set statusline+=
-set statusline+=%{&modified?'[+]':''}		" Show '[+]' if modified the file
-set statusline+=\ %=		" Everything before this is aligned left, rest right
-" set statusline+=' Line '    " Error here
-set statusline+=%l			" Line number
+
+set statusline+=\ %{&modified?'[+]':''}		" Show '[+]' if modified the file
+set statusline+=\ %=			" Align above left, rest right
+set statusline+=\ %p%%			" Percentage of the file the cursor is at
+set statusline+=\ %l:%c			" Line:Column
+
+" =============================================================================
+" === Plugins ================================================================
+" =============================================================================
 
 " 'morhetz/gruvbox': Colour scheme
 " 'dkarter/bullets.vim': Bulleted lists
@@ -53,7 +94,6 @@ Plug 'vim-utils/vim-man'
 " Plug 'git@guthub.com:ycm-core/YouCompleteMe.git'
 Plug 'mbbill/undotree'
 Plug 'dkarter/bullets.vim'		
-
 call plug#end()
 
 colorscheme gruvbox
