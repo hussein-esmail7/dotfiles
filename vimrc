@@ -7,6 +7,23 @@
 "
 " :so % sources the current file
 
+" =============================================================================
+" === Plugins ================================================================
+" =============================================================================
+
+call plug#begin('~/.vim/plugged')
+Plug 'morhetz/gruvbox'					" Colour theme
+Plug 'vim-utils/vim-man'	
+Plug 'itchyny/lightline.vim'			" Lightline statusline
+" Plug 'git@guthub.com:ycm-core/YouCompleteMe.git'
+Plug 'mbbill/undotree'					" Undo tree
+Plug 'dkarter/bullets.vim'				" Bulleted lists
+call plug#end()
+
+" =============================================================================
+" === General ================================================================
+" =============================================================================
+
 syntax on
 
 set tabstop=4 
@@ -41,8 +58,14 @@ set whichwrap+=<,h	" Line wrapping
 
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
-
 " map <Caps_Lock> <ESC>
+
+" =============================================================================
+" === Colour Theme ============================================================
+" =============================================================================
+
+colorscheme gruvbox
+set background=dark
 
 " =============================================================================
 " === Status Line ============================================================
@@ -81,29 +104,10 @@ set statusline+=\ %=			" Align above left, rest right
 set statusline+=\ %p%%			" Percentage of the file the cursor is at
 set statusline+=\ %l:%c			" Line:Column
 
-" =============================================================================
-" === Plugins ================================================================
-" =============================================================================
-
-" 'morhetz/gruvbox': Colour scheme
-" 'dkarter/bullets.vim': Bulleted lists
-
-call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
-Plug 'vim-utils/vim-man'
-" Plug 'git@guthub.com:ycm-core/YouCompleteMe.git'
-Plug 'mbbill/undotree'
-Plug 'dkarter/bullets.vim'		
-call plug#end()
-
-colorscheme gruvbox
-set background=dark
-
-
-
-
-
-
+" The lightline.vim theme
+let g:lightline = {
+      \ 'colorscheme': 'darcula',
+      \ }
 
 
 

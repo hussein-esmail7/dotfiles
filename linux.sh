@@ -72,7 +72,9 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 # megasync
 # Whatsapp
 
-
+# Allow incoming SSH on local network
+systemctl enable sshd
+systemctl start sshd
 
 
 
