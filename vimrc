@@ -60,6 +60,10 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 " map <Caps_Lock> <ESC>
 
+" Show tab indentation lines
+set list
+set listchars=tab:\|-
+
 " =============================================================================
 " === Colour Theme ============================================================
 " =============================================================================
