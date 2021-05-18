@@ -68,6 +68,12 @@ git config --global user.name "$GIT_NAME"
 # Install Plug for vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+
+systemctl enable sshd
+systemctl enable plexmediaserver
+systemctl enable transmission-daemon
+
+
 # Other apps I would still need to install (terminal installation commands not found)
 # megasync
 # Whatsapp
