@@ -78,7 +78,9 @@ systemctl enable transmission-daemon
 # megasync
 # Whatsapp
 
-
+# Allow incoming SSH on local network
+systemctl enable sshd
+systemctl start sshd
 
 
 
