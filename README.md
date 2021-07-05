@@ -9,6 +9,8 @@ Dotfiles
 - [File Descriptions](#file-descriptions)
     - [linux.sh](#linux.sh)
     - [macos.sh](#macos.sh)
+- [Donate](#donate)
+
 ## Where files go
 ### config/
 You guessed it!
@@ -25,3 +27,6 @@ Windows: ```%APPDATA%\Code\User\```
 This file is a list of commands for preferences and package installs that I use. This hasn't been tested yet, and was based off of [macos.sh](#macos.sh).
 ### macos.sh
 This file is a list of commands for preferences and package installs that I use. It includes things like homebrew packages (and the homebrew installation itself), python libraries, and macOS specific preferences like disabling spell check on iMessage
+
+## Donate
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/husseinesmail)

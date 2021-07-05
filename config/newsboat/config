@@ -1,49 +1,44 @@
 # Newsboat Config File
 # https://newsboat.org/releases/2.10/docs/newsboat.html
 
-refresh-on-startup yes 				# Self explanatory
-reload-time 5 					# Reload interval in minutes
-reload-threads 100				# Multiple feeds reload at once
-save-path "~/Downloads" 			# The path where articles are saved to. If an invalid path is specified, the current directory is used.
-browser "open %u"				# Command for opening links
-datetime-format "%m-%d %R" 			# Self-explanatory
-feedlist-title-format "Feeds (%u/%t)" 		# Format of the title in feed list. See "Format Strings" section of Newsboat manual for details on available formats.
+refresh-on-startup yes                              # Self explanatory
+reload-time 5                                       # Reload interval in minutes
+reload-threads 100                                  # Multiple feeds reload at once
+save-path "~/Downloads"                             # The path where articles are saved to. If an invalid path is specified, the current directory is used.
+browser "~/git/sh/determine_browser.sh %u"          # Command for opening links
+datetime-format "%m-%d %R"                          # Self-explanatory
+feedlist-title-format "Feeds (%u/%t)"               # Format of the title in feed list. See "Format Strings" section of Newsboat manual for details on available formats.
+articlelist-format "%3i  %f %D  %?T?|%-17T|  ?%t"   # Format of articles in specific feeds
 show-title-bar no
 keep-articles-days 60
+max-items 300
 always-display-description yes
 download-full-page yes
 goto-next-feed no
 refresh-on-startup yes
-scrolloff 1
+scrolloff 3
 suppress-first-reload yes
-bind-key ESC quit
+
 # Color chart link:
 # http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
 
-color listfocus color15 color1 				# Selected read feed item
-color listfocus_unread color15 color1 bold 		# Selected unread feed item
-# color info color15 color32
-color info color15 default standout				# The bars at the top and bottom
-# color background default default invis 			# Transparent background
+color listfocus color15 color1                      # Selected read feed item
+color listfocus_unread color15 color1 bold          # Selected unread feed item
+color info color15 default standout                 # The bars at the top and bottom
 
-# color listnormal cyan default
-# color listfocus black yellow standout bold
-# color listnormal_unread blue default
-# color listfocus_unread yellow default bold
-# color info red black bold
 color article white default
 
-highlight all "==.*==" red default
-highlight feedlist ".*(0/0))" black
+highlight all "==.*==" red default                  # Highlight non-feed strings red
+highlight feedlist ".*(0/0))" black                 # Do not show counter for empty feeds
 highlight article "^(Feed:|Title:|Author:|Date:|Link:)" green default bold
-# highlight article "\[[[0-9]\]" default default bold
 highlight article " @[^ ]+" default default bold
-highlight article "https?://[^ ]+" color33 default
+highlight article "https?://[^ ]+" color33 default      # Highlight URLs blue
+highlight article "[^ ]+@[^ ]+.[^ ]+" color13 default   # Highlight email addresses purple
 
+# ignore-article "https://reddit.com/r/yorku.rss" "content =~ \"Econ|Soci|Biol|Chem\*"  
+# ignore-article "https://reddit.com/r/opendirectories.rss" "content =~ \"Google\""  
 
-# ignore-article "https://reddit.com/r/yorku.rss" "content =~ \"Econ|Soci|Biol\""  
-ignore-article "https://reddit.com/r/opendirectories.rss" "content =~ \"Google\""  
-
+# unbind keys
 unbind-key A
 unbind-key a
 unbind-key b
@@ -54,10 +49,23 @@ unbind-key Q
 unbind-key q 
 unbind-key R
 unbind-key r 
+unbind-key j
+unbind-key k
+unbind-key J
+unbind-key K
+
+bind-key ESC quit
 bind-key LEFT quit
 bind-key RIGHT open 
 bind-key q hard-quit
 bind-key r reload-all
-bind-key a mark-feed-read
-bind-key A mark-all-feeds-read
+bind-key a toggle-article-read
+bind-key A mark-feed-read
 bind-key o open-in-browser-and-mark-read
+bind-key t set-tag
+
+# bind keys - vim style
+bind-key j down
+bind-key k up
+bind-key l open
+bind-key h quit
