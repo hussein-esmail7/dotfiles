@@ -50,6 +50,7 @@ alias text='$HOME/Documents/Coding/sh/text.sh'
 alias news='pkill news ; newsboat -q'
 alias ytw='$HOME/Documents/Coding/sh/ytw.sh'
 alias mkv='$HOME/Documents/Coding/sh/mkv.sh'
+alias heic='for i in *.HEIC; do tifig -v -p "$i" "${i%".HEIC"}.jpg"; done'
 # alias spot-f='find ~/Applications ~/Desktop ~/Documents ~/Downloads ~/git ~/Movies ~/.config ~/.newsboat -type f | fzf'
 alias spot-f='find ~/Applications ~/Desktop ~/Documents ~/Downloads ~/git ~/Movies ~/.config ~/.newsboat -type f -not -path "*/\.git*/*" -not -path "*/\thumbs/*" -not -path "*/\Documents/Music/Music/*" -not -path "*/\*.localized/*" \( ! -iname ".DS_Store" ! -iname "Icon" ! -iname ".localized" ! -iname ".ini" ! -name ".git*" ! -name ".db*" \)| fzf'
 alias spot='open `spot-f`'
@@ -65,6 +66,12 @@ function mcd() {
     mkdir -p "$1" && cd "$1"
 }
 
+function heicr() {
+	for i in *.HEIC; do
+		tifig -v -p "$i" "${i%'.HEIC'}.jpg"
+		rm -f "$i"
+	done
+}
 # The git prompt's git commands are read-only and should not interfere with
 # other processes. This environment variable is equivalent to running with `git
 # --no-optional-locks`, but falls back gracefully for older versions of git.
