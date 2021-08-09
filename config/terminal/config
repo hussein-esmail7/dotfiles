@@ -54,6 +54,7 @@ alias heic='for i in *.HEIC; do tifig -v -p "$i" "${i%".HEIC"}.jpg"; done'
 # alias spot-f='find ~/Applications ~/Desktop ~/Documents ~/Downloads ~/git ~/Movies ~/.config ~/.newsboat -type f | fzf'
 alias spot-f='find ~/Applications ~/Desktop ~/Documents ~/Downloads ~/git ~/Movies ~/.config ~/.newsboat -type f -not -path "*/\.git*/*" -not -path "*/\thumbs/*" -not -path "*/\Documents/Music/Music/*" -not -path "*/\*.localized/*" \( ! -iname ".DS_Store" ! -iname "Icon" ! -iname ".localized" ! -iname ".ini" ! -name ".git*" ! -name ".db*" \)| fzf'
 alias spot='open `spot-f`'
+alias z='zathura'
 
 # Prints ls with directories first, then files. Directories = blue, files = green. Directories are alphabetized, and so are files. Directories have a "/" at the end
 # FIX LATER
