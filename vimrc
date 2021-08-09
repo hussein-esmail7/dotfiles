@@ -124,3 +124,21 @@ au BufReadPost *
         \ execute("normal `\"") |
     \ endif
 
+""" Normal Mode Shortcuts
+nnoremap <Enter> i<Enter><Esc>
+""" END
+
+""" Replacements: Inline
+inoremap < <><Left>
+inoremap ( ()<Left>
+inoremap { {}<Left>
+inoremap [ []<Left>
+autocmd FileType tex inoremap ;b \textbf{}<Esc>T{i
+autocmd FileType tex inoremap ` `'<Left>
+""" END
+
+""" Replacements: New lines
+autocmd FileType tex inoremap ;list \begin{itemize*}<Enter><Enter>\end{itemize*}<Esc>k$i<Tab>\item<Space>
+autocmd FileType tex inoremap ;enum \begin{enumerate*}<Enter><Enter>\end{enumerate*}<Esc>k$i<Tab>\item<Space>
+autocmd FileType tex inoremap ;code \begin{lstlisting}<Enter><Enter>\end{lstlisting}<Esc>k$i<Tab>
+""" END
