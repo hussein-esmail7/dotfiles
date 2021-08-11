@@ -47,7 +47,7 @@ alias yta='${CODE}/sh/yta.sh'
 alias wget='wget -crq --show-progress'
 alias ip='echo -n "Local IP: \n" && ipconfig getifaddr en0 && echo -n "External IP: \n" && curl ipinfo.io/ip && echo'
 alias music='musikcube'
-alias config='~/git/dotfiles/config/terminal/config'
+alias config='$EDITOR ~/git/dotfiles/config/terminal/config'
 alias ls='ls -1 --quoting-style=literal -p' # -1: 1 file/dir per line, -p: directories have / at the end
 alias now='date +"%Y %m %d"'
 alias weather='curl wttr.in/Toronto'
