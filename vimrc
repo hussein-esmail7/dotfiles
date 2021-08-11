@@ -113,6 +113,9 @@ let g:lightline = {
       \ 'colorscheme': 'darcula',
       \ }
 
+
+set splitright
+
 " =============================================================================
 " === Functions ==============================================================
 " =============================================================================
@@ -126,6 +129,10 @@ au BufReadPost *
 
 """ Normal Mode Shortcuts
 nnoremap <Enter> i<Enter><Esc>
+nnoremap <C-J> <C-W><C-J> 
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 """ END
 
 """ Replacements: Inline
@@ -135,6 +142,7 @@ inoremap { {}<Left>
 inoremap [ []<Left>
 autocmd FileType tex inoremap ;b \textbf{}<Esc>T{i
 autocmd FileType tex inoremap ` `'<Left>
+autocmd FileType tex inoremap $ $$<Left>
 """ END
 
 """ Replacements: New lines
