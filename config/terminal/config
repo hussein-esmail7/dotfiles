@@ -175,6 +175,8 @@ function search_history() {
 	history | grep $1
 }
 
-# {username} @ YYYY MM DD HH:mm: {Current dir}
+# All in green: {username} @ YYYY MM DD HH:mm: {Current dir}
 # PS1="\[\e[32m\]\u @ \$(date '+%Y %m %d %I:%M'):\[\e[00m\] \W (\$(ls -1 | wc -l | sed 's: ::g') file\$(plural)) > "
+
+# [{red: username}@{cyan: computer name}: (num of files) {cwd}]
 export PS1="[\[\e[31m\]\u\e[00m\]@\e[36m\]\h\e[00m\]: (\$(ls -1 | wc -l | xargs)) \W] "
