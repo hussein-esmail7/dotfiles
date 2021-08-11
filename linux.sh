@@ -69,18 +69,20 @@ git config --global user.name "$GIT_NAME"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
-systemctl enable sshd
+systemctl enable sshd					# Allow incoming SSH on networks
 systemctl enable plexmediaserver
 systemctl enable transmission-daemon
 
+# Manual activity required:
+# - If using another computer that's going to be SSH-ing to this computer, \
+# 		send this computer the ssh key using copy-ssh-key (id_rsa.pub)
+
+# TODO: Edit /etc/ssh/sshd_config
+# PasswordAuthentication no
+# PubKeyAuthentication yes
 
 # Other apps I would still need to install (terminal installation commands not found)
 # megasync
 # Whatsapp
-
-# Allow incoming SSH on local network
-systemctl enable sshd
-systemctl start sshd
-
 
 

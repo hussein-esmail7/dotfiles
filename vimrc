@@ -16,7 +16,6 @@ Plug 'morhetz/gruvbox'					" Colour theme
 Plug 'vim-utils/vim-man'	
 Plug 'itchyny/lightline.vim'			" Lightline statusline
 " Plug 'git@guthub.com:ycm-core/YouCompleteMe.git'
-Plug 'mbbill/undotree'					" Undo tree
 Plug 'dkarter/bullets.vim'				" Bulleted lists
 call plug#end()
 
@@ -65,7 +64,7 @@ set list
 set listchars=tab:\|-
 
 " =============================================================================
-" === Colour Theme ============================================================
+" === Colour Theme ===========================================================
 " =============================================================================
 
 colorscheme gruvbox
@@ -127,6 +126,9 @@ au BufReadPost *
         \ execute("normal `\"") |
     \ endif
 
+" =============================================================================
+" === Remaps =================================================================
+" =============================================================================
 """ Normal Mode Shortcuts
 nnoremap <Enter> i<Enter><Esc>
 nnoremap <C-J> <C-W><C-J> 
@@ -135,6 +137,9 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 """ END
 
+" =============================================================================
+" === Text Replacements ======================================================
+" =============================================================================
 """ Replacements: Inline
 inoremap < <><Left>
 inoremap ( ()<Left>

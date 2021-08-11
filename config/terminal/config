@@ -22,9 +22,9 @@ export HISTFILESIZE=-1
 export BASH_SILENCE_DEPRECATION_WARNING=1 # Get rid of "The interactive shell is zsh" message
 
 # Personal Variables used while in Terminal
-export SCHOOL='/home/hussein/Documents/School/1 Y3F'
-export GIT='/home/hussein/git'
-export CODE='/home/hussein/Documents/Coding'
+export SCHOOL='Documents/School/1 Y3F'
+export GIT='git'
+export CODE='Documents/Coding'
 export SITE='/hdd1/Website/husseinesmail'
 
 # Quickly cd into my Python directory
@@ -32,7 +32,7 @@ alias py='cd ~/Documents/Coding/py'
 alias pyf='cd ~/Documents/Coding/py/Finished'
 
 # Compile file program
-alias c='${CODE}/sh/c.sh'
+alias c='${HOME}/${CODE}/sh/c.sh'
 
 # Always copy recursively, in case I'm copying a folder
 alias cp='cp -r' 
@@ -43,29 +43,29 @@ alias rm='rm -i'
 alias gitpush='git add . ; git commit ; git push'
 alias nicefont='toilet -f mono9'						# Nice title text
 alias yt='youtube-dl -ic -R 100 --no-check-certificate --yes-playlist --skip-unavailable-fragments --restrict-filenames --sub-lang en --no-warnings --embed-subs --no-part -f best  -o "%(title)s.%(ext)s"'
-alias yta='${CODE}/sh/yta.sh'
+alias yta='${HOME}/${CODE}/sh/yta.sh'
 alias wget='wget -crq --show-progress'
 alias ip='echo -n "Local IP: \n" && ipconfig getifaddr en0 && echo -n "External IP: \n" && curl ipinfo.io/ip && echo'
 alias music='musikcube'
 alias config='$EDITOR ~/git/dotfiles/config/terminal/config'
-alias ls='ls -1 --quoting-style=literal -p' # -1: 1 file/dir per line, -p: directories have / at the end
+# alias ls='ls -1p' # -1: 1 file/dir per line, -p: directories have / at the end
 alias now='date +"%Y %m %d"'
 alias weather='curl wttr.in/Toronto'
 alias server='python3 -m http.server'
 alias school='cd && cd "$HOME/Documents/School - 1 University/1 Y1SU" && open .'
-alias pdf='${CODE}/sh/pdf.sh'
-alias update='${GIT}/sh/update.sh'
-alias groff-cheetsheet='${CODE}/sh/groff-cheetsheet.sh'
-alias b64='${GIT}/sh/b64.sh'
-alias pass='${CODE}/sh/pass.sh'
-alias template='${GIT}/template-maker/template-maker'
-alias text='${CODE}/sh/text.sh'
+alias pdf='${HOME}/${CODE}/sh/pdf.sh'
+alias update='${HOME}/${GIT}/sh/update.sh'
+alias groff-cheetsheet='${HOME}/${CODE}/sh/groff-cheetsheet.sh'
+alias b64='${HOME}/${GIT}/sh/b64.sh'
+alias pass='${HOME}/${CODE}/sh/pass.sh'
+alias template='${HOME}/${GIT}/template-maker/template-maker'
+alias text='${HOME}/${CODE}/sh/text.sh'
 alias news='pkill news ; newsboat -q'
-alias ytw='${CODE}/sh/ytw.sh'
-alias mkv='${CODE}/sh/mkv.sh'
+alias ytw='${HOME}/${CODE}/sh/ytw.sh'
+alias mkv='${HOME}/${CODE}/sh/mkv.sh'
 # alias heic='for i in *.HEIC; do tifig -v -p "$i" "${i%".HEIC"}.jpg"; done'
 alias z='zathura'
-alias plex='${GIT}/sh/plex.sh'
+alias plex='${HOME}/${GIT}/sh/plex.sh'
 
 # Prints ls with directories first, then files. Directories = blue, files = green. Directories are alphabetized, and so are files. Directories have a "/" at the end
 # FIX LATER
@@ -76,7 +76,7 @@ alias plex='${GIT}/sh/plex.sh'
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then # Linux System
     alias todo='$EDITOR ${HOME}/Downloads/todo.txt' # Quickly open my todo list
     alias spot='xdg-open `spot-f` &'
-    alias school='xdg-open "${SCHOOL}" &' 
+    alias school='xdg-open "${HOME}/${SCHOOL}" &' 
     alias y="yay"
     alias p="sudo pacman"
     alias ytfzf="ytfzf -t --preview-side=right"
@@ -96,7 +96,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS System
 fi
 
 function sitepush() {
-	# python3 "${GIT}/html2rss/html2rss.py" "$1"
+	# python3 "${HOME}/${GIT}/html2rss/html2rss.py" "$1"
 	# scp -r /hdd1/Website/husseinesmail/ root@husseinesmail.xyz:/var/www/
 	rsync -zhp /hdd1/Website/husseinesmail/ root@husseinesmail.xyz:/var/www/husseinesmail/
 	echo "You need to copy the folder and name it '/hdd1/Backups/Website/$(date +\"%Y %m %d %H%M\")'/"
@@ -174,4 +174,6 @@ function search_history() {
 	history | grep $1
 }
 
-PS1="\[\e[32m\]\u @ \$(date '+%Y %m %d %I:%M'):\[\e[00m\] \W (\$(ls -1 | wc -l | sed 's: ::g') file\$(plural)) > "
+# {username} @ YYYY MM DD HH:mm: {Current dir}
+# PS1="\[\e[32m\]\u @ \$(date '+%Y %m %d %I:%M'):\[\e[00m\] \W (\$(ls -1 | wc -l | sed 's: ::g') file\$(plural)) > "
+export PS1="[\[\e[31m\]\u\e[00m\]@\e[36m\]\h\e[00m\]:\W] "
