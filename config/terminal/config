@@ -1,66 +1,105 @@
 
 
-# When making a change to this file, run 'source PATH' in terminal to update it after saving this file
+# When making a change to this file, run 'source $PATH' in terminal to update it after saving this file
 
-EDITOR=/usr/bin/nano # Default editor to nano instead of vim
-export EDITOR
+export EDITOR=vim 
+export BROWSER=/usr/bin/brave       # Default browser to Brave instead of Firefox
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:$HOME/Library/Python/3.9/bin:/Library/Frameworks/Python.framework/Versions/3.8/bin:/Library/TeX/texbin/:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Library/TeX/texbin//:/usr/local/texlive/2020basic/bin/universal-darwin
-export PYTHONPATH=$PYTHONPATH:/System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/site-packages/
-export PYTHONPATH=$PYTHONPATH:~/test/site-packages
+
+export PATH=$PATH:/usr/bin
+export PATH=$PATH:/bin
+export PATH=$PATH:/usr/sbin
+export PATH=$PATH:/sbin
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/X11/bin
+export PYTHONPATH=$PYTHONPATH:$HOME/test/site-packages
+
+# Setting history to unlimited
+export HISTSIZE=-1 
+export HISTFILESIZE=-1
+
 export BASH_SILENCE_DEPRECATION_WARNING=1 # Get rid of "The interactive shell is zsh" message
 
-
-
-alias help='python3 ~/help.py'
+# Personal Variables used while in Terminal
+export SCHOOL='/home/hussein/Documents/School/1 Y3F'
+export GIT='/home/hussein/git'
+export CODE='/home/hussein/Documents/Coding'
+export SITE='/hdd1/Website/husseinesmail'
 
 # Quickly cd into my Python directory
 alias py='cd ~/Documents/Coding/py'
 alias pyf='cd ~/Documents/Coding/py/Finished'
 
-# Quickly open my todo list
-alias todo='open ~/Downloads/todo.txt'
-
 # Compile file program
-alias c='~/Documents/Coding/sh/c.sh'
+alias c='${CODE}/sh/c.sh'
 
 # Always copy recursively, in case I'm copying a folder
 alias cp='cp -r' 
 
+alias v="vim"											# Editor shortcut
+alias mv='mv -i'
+alias rm='rm -i'
+alias gitpush='git add . ; git commit ; git push'
+alias nicefont='toilet -f mono9'						# Nice title text
 alias yt='youtube-dl -ic -R 100 --no-check-certificate --yes-playlist --skip-unavailable-fragments --restrict-filenames --sub-lang en --no-warnings --embed-subs --no-part -f best  -o "%(title)s.%(ext)s"'
-alias yta=~/Documents/Coding/sh/yta.sh
-alias wget='wget --continue --show-progress'
+alias yta='${CODE}/sh/yta.sh'
+alias wget='wget -crq --show-progress'
 alias ip='echo -n "Local IP: \n" && ipconfig getifaddr en0 && echo -n "External IP: \n" && curl ipinfo.io/ip && echo'
 alias music='musikcube'
-alias config='open -a TextEdit.app ~/.config/terminal/config'
-alias ls='ls -1'
+alias config='~/git/dotfiles/config/terminal/config'
+alias ls='ls -1 --quoting-style=literal -p' # -1: 1 file/dir per line, -p: directories have / at the end
 alias now='date +"%Y %m %d"'
 alias weather='curl wttr.in/Toronto'
 alias server='python3 -m http.server'
 alias school='cd && cd "$HOME/Documents/School - 1 University/1 Y1SU" && open .'
-alias pdf='$HOME/Documents/Coding/sh/pdf.sh'
-alias update='$HOME/Documents/Coding/sh/update.sh'
-alias groff-template='$HOME/Documents/Coding/sh/groff-template.sh'
-alias groff-cheetsheet='$HOME/Documents/Coding/sh/groff-cheetsheet.sh'
-alias b64='$HOME/Documents/Coding/sh/b64.sh'
-alias pass='$HOME/Documents/Coding/sh/pass.sh'
-alias template='$HOME/git/template-maker/main.sh'
-alias text='$HOME/Documents/Coding/sh/text.sh'
+alias pdf='${CODE}/sh/pdf.sh'
+alias update='${GIT}/sh/update.sh'
+alias groff-cheetsheet='${CODE}/sh/groff-cheetsheet.sh'
+alias b64='${GIT}/sh/b64.sh'
+alias pass='${CODE}/sh/pass.sh'
+alias template='${GIT}/template-maker/template-maker'
+alias text='${CODE}/sh/text.sh'
 alias news='pkill news ; newsboat -q'
-alias ytw='$HOME/Documents/Coding/sh/ytw.sh'
-alias mkv='$HOME/Documents/Coding/sh/mkv.sh'
-alias heic='for i in *.HEIC; do tifig -v -p "$i" "${i%".HEIC"}.jpg"; done'
-# alias spot-f='find ~/Applications ~/Desktop ~/Documents ~/Downloads ~/git ~/Movies ~/.config ~/.newsboat -type f | fzf'
-alias spot-f='find ~/Applications ~/Desktop ~/Documents ~/Downloads ~/git ~/Movies ~/.config ~/.newsboat -type f -not -path "*/\.git*/*" -not -path "*/\thumbs/*" -not -path "*/\Documents/Music/Music/*" -not -path "*/\*.localized/*" \( ! -iname ".DS_Store" ! -iname "Icon" ! -iname ".localized" ! -iname ".ini" ! -name ".git*" ! -name ".db*" \)| fzf'
-alias spot='open `spot-f`'
+alias ytw='${CODE}/sh/ytw.sh'
+alias mkv='${CODE}/sh/mkv.sh'
+# alias heic='for i in *.HEIC; do tifig -v -p "$i" "${i%".HEIC"}.jpg"; done'
 alias z='zathura'
+alias plex='${GIT}/sh/plex.sh'
 
 # Prints ls with directories first, then files. Directories = blue, files = green. Directories are alphabetized, and so are files. Directories have a "/" at the end
 # FIX LATER
 # function ls() {
 #     ls -Flh | sort -r | awk 'NF==9 { if ($1~/^d/) { printf "\033[1;34m" $9 "\033[0m" "\n" } else { printf "\033[1;32m" $9 "\033[0m" "\n" } }'
 # }
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then # Linux System
+    alias todo='$EDITOR ${HOME}/Downloads/todo.txt' # Quickly open my todo list
+    alias spot='xdg-open `spot-f` &'
+    alias school='xdg-open "${SCHOOL}" &' 
+    alias y="yay"
+    alias p="sudo pacman"
+    alias ytfzf="ytfzf -t --preview-side=right"
+elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS System
+	export PYTHONPATH=$PYTHONPATH:/System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/site-packages/
+    export PATH=$PATH:${HOME}/Library/Python/3.9/bin
+    export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.9/bin
+    export PATH=$PATH:/Library/TeX/texbin/
+    export PATH=$PATH:/Library/TeX/texbin//
+    export PATH=$PATH:/usr/local/texlive/2020basic/bin/universal-darwin
+    
+	alias todo='open ${HOME}/Downloads/todo.txt' # Quickly open my todo list
+    alias spot='open `spot-f`'
+    alias ip='echo -n "Local IP: \n" && ipconfig getifaddr en0 && echo -n "External IP: \n" && curl ipinfo.io/ip && echo'
+    alias text='${HOME}/Documents/Coding/sh/text.sh'
+	alias spot-f='find ~/Applications ~/Desktop ~/Documents ~/Downloads ~/git ~/Movies ~/.config ~/.newsboat -type f -not -path "*/\.git*/*" -not -path "*/\thumbs/*" -not -path "*/\Documents/Music/Music/*" -not -path "*/\*.localized/*" \( ! -iname ".DS_Store" ! -iname "Icon" ! -iname ".localized" ! -iname ".ini" ! -name ".git*" ! -name ".db*" \)| fzf'
+fi
+
+function sitepush() {
+	# python3 "${GIT}/html2rss/html2rss.py" "$1"
+	scp -r /hdd1/Backups/Website/husseinesmail/ root@husseinesmail.xyz:/var/www/
+	echo "You need to copy the folder and name it '/hdd1/Backups/Website/$(date +\"%Y %m %d %H%M\")'/"
+}
 
 function mcd() {
     # Create directory and cd to it
@@ -125,8 +164,13 @@ function parse_git_branch() {
 }
 
 function plural() {
+    # Used for PS1 (for displaying number of files, and showing "1 file" instead of "1 files")
+    # Must be before PS1 declaration
     [ "$(ls -1 | wc -l | sed 's: ::g')" -eq 1 ] || echo "s"
 }
 
-PS1="\[\e[32m\]\u @ \$(date '+%Y %m %d %I:%M'):\[\e[00m\] \W (\$(ls -1 | wc -l | sed 's: ::g') file\$(plural)) > "
+function search_history() {
+	history | grep $1
+}
 
+PS1="\[\e[32m\]\u @ \$(date '+%Y %m %d %I:%M'):\[\e[00m\] \W (\$(ls -1 | wc -l | sed 's: ::g') file\$(plural)) > "
