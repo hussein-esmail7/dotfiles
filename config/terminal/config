@@ -97,7 +97,8 @@ fi
 
 function sitepush() {
 	# python3 "${GIT}/html2rss/html2rss.py" "$1"
-	scp -r /hdd1/Backups/Website/husseinesmail/ root@husseinesmail.xyz:/var/www/
+	# scp -r /hdd1/Website/husseinesmail/ root@husseinesmail.xyz:/var/www/
+	rsync -zhp /hdd1/Website/husseinesmail/ root@husseinesmail.xyz:/var/www/husseinesmail/
 	echo "You need to copy the folder and name it '/hdd1/Backups/Website/$(date +\"%Y %m %d %H%M\")'/"
 }
 
