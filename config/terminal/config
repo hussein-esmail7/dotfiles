@@ -37,6 +37,7 @@ alias c='${HOME}/${CODE}/sh/c.sh'
 # Always copy recursively, in case I'm copying a folder
 alias cp='cp -r' 
 
+alias ls="ls -1p"
 alias v="vim"											# Editor shortcut
 alias mv='mv -i'
 alias rm='rm -i'
@@ -176,4 +177,4 @@ function search_history() {
 
 # {username} @ YYYY MM DD HH:mm: {Current dir}
 # PS1="\[\e[32m\]\u @ \$(date '+%Y %m %d %I:%M'):\[\e[00m\] \W (\$(ls -1 | wc -l | sed 's: ::g') file\$(plural)) > "
-export PS1="[\[\e[31m\]\u\e[00m\]@\e[36m\]\h\e[00m\]:\W] "
+export PS1="[\[\e[31m\]\u\e[00m\]@\e[36m\]\h\e[00m\]: (\$(ls -1 | wc -l | xargs)) \W] "
