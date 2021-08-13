@@ -19,6 +19,8 @@ refresh-on-startup yes
 scrolloff 3
 suppress-first-reload yes
 
+text-width 80 
+
 # Color chart link:
 # http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
 
