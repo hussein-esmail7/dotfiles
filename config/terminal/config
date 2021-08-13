@@ -99,8 +99,10 @@ fi
 function sitepush() {
 	# python3 "${HOME}/${GIT}/html2rss/html2rss.py" "$1"
 	# scp -r /hdd1/Website/husseinesmail/ root@husseinesmail.xyz:/var/www/
-	rsync -zhp /hdd1/Website/husseinesmail/ root@husseinesmail.xyz:/var/www/husseinesmail/
-	echo "You need to copy the folder and name it '/hdd1/Backups/Website/$(date +\"%Y %m %d %H%M\")'/"
+	rsync -aqz /hdd1/Website/husseinesmail/ root@husseinesmail.xyz:/var/www/husseinesmail/
+    folder_name=$(date +"%Y %m %d %H%M")
+    # mkdir -p "/hdd1/Website/${folder_name}"
+    cp -R /hdd1/Website/husseinesmail/ "/hdd1/Website/${folder_name}/"
 }
 
 function mcd() {
