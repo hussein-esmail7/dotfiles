@@ -32,7 +32,7 @@ alias py='cd ~/Documents/Coding/py'
 alias pyf='cd ~/Documents/Coding/py/Finished'
 
 # Compile file program
-alias c='${HOME}/${CODE}/sh/c.sh'
+alias c='${HOME}/${GIT}/sh/c.sh'
 
 # Always copy recursively, in case I'm copying a folder
 alias cp='cp -r' 
