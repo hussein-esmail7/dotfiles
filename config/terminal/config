@@ -37,36 +37,35 @@ alias c='${HOME}/${GIT}/sh/c.sh'
 # Always copy recursively, in case I'm copying a folder
 alias cp='cp -r' 
 
-alias ls="ls -1p"
-alias v="vim"											# Editor shortcut
-alias mv='mv -i'
-alias rm='rm -i'
-alias gitpush='git add . ; git commit ; git push'
-alias nicefont='toilet -f mono9'						# Nice title text
-alias yt='youtube-dl -ic -R 100 --no-check-certificate --yes-playlist --skip-unavailable-fragments --restrict-filenames --sub-lang en --no-warnings --embed-subs --no-part -f best  -o "%(title)s.%(ext)s"'
-alias yta='${HOME}/${CODE}/sh/yta.sh'
-alias wget='wget -crq --show-progress'
-alias ip='echo -n "Local IP: \n" && ipconfig getifaddr en0 && echo -n "External IP: \n" && curl ipinfo.io/ip && echo'
-alias music='musikcube'
-alias config='$EDITOR ~/git/dotfiles/config/terminal/config'
-# alias ls='ls -1p' # -1: 1 file/dir per line, -p: directories have / at the end
-alias now='date +"%Y %m %d"'
-alias weather='curl wttr.in/Toronto'
-alias server='python3 -m http.server'
-alias school='cd && cd "$HOME/Documents/School - 1 University/1 Y1SU" && open .'
-alias pdf='${HOME}/${CODE}/sh/pdf.sh'
-alias update='${HOME}/${GIT}/sh/update.sh'
-alias groff-cheetsheet='${HOME}/${CODE}/sh/groff-cheetsheet.sh'
 alias b64='${HOME}/${GIT}/sh/b64.sh'
+alias config='~/git/dotfiles/config/terminal/config'
+alias f="fzf --keep-right --prompt='Search: '"
+alias gitpush='git add . ; git commit ; git push'
+alias groff-cheetsheet='${HOME}/${CODE}/sh/groff-cheetsheet.sh'
+alias ip='echo -n "Local IP: \n" && ipconfig getifaddr en0 && echo -n "External IP: \n" && curl ipinfo.io/ip && echo'
+alias ls="ls -1p"
+alias mkv='${HOME}/${CODE}/sh/mkv.sh'
+alias music='musikcube'
+alias mv='mv -i'
+alias news='pkill news ; newsboat -q'
+alias nicefont='toilet -f mono9'						# Nice title text
+alias now='date +"%Y %m %d"'
 alias pass='${HOME}/${CODE}/sh/pass.sh'
+alias pdf='${HOME}/${CODE}/sh/pdf.sh'
+alias plex='${HOME}/${GIT}/sh/plex.sh'
+alias rm='rm -i'
+alias school='cd && cd "$HOME/Documents/School - 1 University/1 Y1SU" && open .'
+alias server='python3 -m http.server'
 alias template='${HOME}/${GIT}/template-maker/template-maker'
 alias text='${HOME}/${CODE}/sh/text.sh'
-alias news='pkill news ; newsboat -q'
+alias update='${HOME}/${GIT}/sh/update.sh'
+alias v="vim"											# Editor shortcut
+alias weather='curl wttr.in/Toronto'
+alias wget='wget -crq --show-progress'
+alias yt='youtube-dl -ic -R 100 --no-check-certificate --yes-playlist --skip-unavailable-fragments --restrict-filenames --sub-lang en --no-warnings --embed-subs --no-part -f best  -o "%(title)s.%(ext)s"'
+alias yta='${HOME}/${CODE}/sh/yta.sh'
 alias ytw='${HOME}/${CODE}/sh/ytw.sh'
-alias mkv='${HOME}/${CODE}/sh/mkv.sh'
-# alias heic='for i in *.HEIC; do tifig -v -p "$i" "${i%".HEIC"}.jpg"; done'
 alias z='zathura'
-alias plex='${HOME}/${GIT}/sh/plex.sh'
 
 # Prints ls with directories first, then files. Directories = blue, files = green. Directories are alphabetized, and so are files. Directories have a "/" at the end
 # FIX LATER
@@ -93,7 +92,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS System
     alias spot='open `spot-f`'
     alias ip='echo -n "Local IP: \n" && ipconfig getifaddr en0 && echo -n "External IP: \n" && curl ipinfo.io/ip && echo'
     alias text='${HOME}/Documents/Coding/sh/text.sh'
-	alias spot-f='find ~/Applications ~/Desktop ~/Documents ~/Downloads ~/git ~/Movies ~/.config ~/.newsboat -type f -not -path "*/\.git*/*" -not -path "*/\thumbs/*" -not -path "*/\Documents/Music/Music/*" -not -path "*/\*.localized/*" \( ! -iname ".DS_Store" ! -iname "Icon" ! -iname ".localized" ! -iname ".ini" ! -name ".git*" ! -name ".db*" \)| fzf'
 fi
 
 function sitepush() {

@@ -61,7 +61,7 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " Show tab indentation lines
 set list
-set listchars=tab:\|-
+set listchars=tab:\|\ ,eol:¬
 
 " =============================================================================
 " === Colour Theme ===========================================================
@@ -129,6 +129,8 @@ au BufReadPost *
 " =============================================================================
 " === Remaps =================================================================
 " =============================================================================
+
+
 """ Normal Mode Shortcuts
 nnoremap <Enter> i<Enter><Esc>
 nnoremap <C-J> <C-W><C-J> 
@@ -148,6 +150,7 @@ inoremap [ []<Left>
 autocmd FileType tex inoremap ;b \textbf{}<Esc>T{i
 autocmd FileType tex inoremap ` `'<Left>
 autocmd FileType tex inoremap $ $$<Left>
+autocmd FileType html inoremap < <></><Left><Left><Left><Left>
 """ END
 
 """ Replacements: New lines
