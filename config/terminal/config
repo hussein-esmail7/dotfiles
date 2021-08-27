@@ -1,6 +1,10 @@
-
-
-# When making a change to this file, run 'source $PATH' in terminal to update it after saving this file
+#                         ▄▀▀    ▀
+#   ▄▄▄    ▄▄▄   ▄ ▄▄   ▄▄█▄▄  ▄▄▄     ▄▄▄▄
+#  █▀  ▀  █▀ ▀█  █▀  █    █      █    █▀ ▀█
+#  █      █   █  █   █    █      █    █   █
+#  ▀█▄▄▀  ▀█▄█▀  █   █    █    ▄▄█▄▄  ▀█▄▀█
+#                                      ▄  █
+#                                       ▀▀
 
 export EDITOR=vim 
 export BROWSER=/usr/bin/brave       # Default browser to Brave instead of Firefox

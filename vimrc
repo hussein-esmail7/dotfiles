@@ -31,16 +31,16 @@ set shiftwidth=4
 set noswapfile		" Makes things nicer in each folder, does not create .swap files
 set smartindent		" Self-explanatory
 set exrc			" Source another .vimrc if another is there in the current directory 
-set nu				" Line numbers follow current line set relativenumber " Show actual line number on the line you're on 
+set nu				" Line numbers follow current line 
 set relativenumber	" Follow current line numbers
 set noerrorbells	" Do not play a sound when an error occurs 
 set incsearch		" Highlight items as they are searched
-set scrolloff=3
+set scrolloff=3		" If cursor is at the bottom, you see the text after it
 set signcolumn=yes	" Used for symbols in displaying error symbols, etc
 set linebreak		" New line only on new words, not in the middle of words
 set showtabline=2	" Always show tabline
-set spelllang=en_ca
-set cursorline
+set spelllang=en_ca	" Default language
+set cursorline		" Highlight the line the cursor is on
 
 set showcmd
 set ruler			" Shows the column and row num the cursor is on
@@ -55,7 +55,7 @@ set undofile		" Store each command so they can be done in individual undo files 
 set whichwrap+=>,l	" Line wrapping
 set whichwrap+=<,h	" Line wrapping
 
-set colorcolumn=80
+set colorcolumn=80	" Default line width
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 " map <Caps_Lock> <ESC>
 
