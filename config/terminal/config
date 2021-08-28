@@ -42,11 +42,11 @@ alias c='${HOME}/${GIT}/sh/c.sh'
 alias cp='cp -r' 
 
 alias b64='${HOME}/${GIT}/sh/b64.sh'
-alias config='${HOME}/${GIT}/dotfiles/config/terminal/config'
+alias config='$EDITOR ${HOME}/${GIT}/dotfiles/config/terminal/config'
 alias f="fzf --keep-right --prompt='Search: '"
 alias gitpush='${HOME}/${GIT}/sh/gitpush.sh'
 alias cheat='${HOME}/${GIT}/sh/cheatsheet.sh'
-alias ip='echo -n "Local IP: \n" && ipconfig getifaddr en0 && echo -n "External IP: \n" && curl ipinfo.io/ip && echo'
+alias ip='${HOME}/${GIT}/sh/ip.sh'
 alias ls="ls -1p"
 alias mkv='${HOME}/${CODE}/sh/mkv.sh'
 alias music='musikcube'
@@ -94,7 +94,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS System
     
 	alias todo='open ${HOME}/Downloads/todo.txt' # Quickly open my todo list
     alias spot='open `spot-f`'
-    alias ip='echo -n "Local IP: \n" && ipconfig getifaddr en0 && echo -n "External IP: \n" && curl ipinfo.io/ip && echo'
     alias text='${HOME}/Documents/Coding/sh/text.sh'
 fi
 
