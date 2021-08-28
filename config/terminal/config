@@ -42,10 +42,10 @@ alias c='${HOME}/${GIT}/sh/c.sh'
 alias cp='cp -r' 
 
 alias b64='${HOME}/${GIT}/sh/b64.sh'
-alias config='~/git/dotfiles/config/terminal/config'
+alias config='${HOME}/${GIT}/dotfiles/config/terminal/config'
 alias f="fzf --keep-right --prompt='Search: '"
-alias gitpush='~/git/sh/gitpush.sh'
-alias groff-cheetsheet='${HOME}/${CODE}/sh/groff-cheetsheet.sh'
+alias gitpush='${HOME}/${GIT}/sh/gitpush.sh'
+alias cheat='${HOME}/${GIT}/sh/cheatsheet.sh'
 alias ip='echo -n "Local IP: \n" && ipconfig getifaddr en0 && echo -n "External IP: \n" && curl ipinfo.io/ip && echo'
 alias ls="ls -1p"
 alias mkv='${HOME}/${CODE}/sh/mkv.sh'
