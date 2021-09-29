@@ -26,7 +26,7 @@ export HISTFILESIZE=-1
 export BASH_SILENCE_DEPRECATION_WARNING=1 # Get rid of "The interactive shell is zsh" message
 
 # Personal Variables used while in Terminal
-export SCHOOL='Documents/School/1 Y3F'
+export SCHOOL="~/Documents/School/1\ Y3F"
 export GIT='git'
 export CODE='Documents/Coding'
 export SITE='/hdd1/Website/husseinesmail'

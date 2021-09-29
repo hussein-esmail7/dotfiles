@@ -143,18 +143,20 @@ nnoremap <C-H> <C-W><C-H>
 " === Text Replacements ======================================================
 " =============================================================================
 """ Replacements: Inline
-inoremap < <><Left>
-inoremap ( ()<Left>
-inoremap { {}<Left>
-inoremap [ []<Left>
-autocmd FileType tex inoremap ;b \textbf{}<Esc>T{i
-autocmd FileType tex inoremap ` `'<Left>
-autocmd FileType tex inoremap $ $$<Left>
-autocmd FileType html inoremap < <></><Left><Left><Left><Left>
+						inoremap	<		<><Left>
+						inoremap	(		()<Left>
+						inoremap	{		{}<Left>
+						inoremap	[		[]<Left>
+
+autocmd FileType tex	inoremap	;b		\textbf{}<Esc>T{i
+autocmd FileType tex	inoremap	`		`'<Left>
+autocmd FileType tex	inoremap	$		$$<Left>
+autocmd FileType html	inoremap	<		<></><Left><Left><Left><Left>
 """ END
 
 """ Replacements: New lines
-autocmd FileType tex inoremap ;list \begin{itemize*}<Enter><Enter>\end{itemize*}<Esc>k$i<Tab>\item<Space>
-autocmd FileType tex inoremap ;enum \begin{enumerate*}<Enter><Enter>\end{enumerate*}<Esc>k$i<Tab>\item<Space>
-autocmd FileType tex inoremap ;code \begin{lstlisting}<Enter><Enter>\end{lstlisting}<Esc>k$i<Tab>
+autocmd FileType tex	inoremap	;list	\begin{itemize*}<Enter><Enter>\end{itemize*}<Esc>k$i<Tab>\item<Space>
+autocmd FileType tex	inoremap	;enum	\begin{enumerate*}<Enter><Enter>\end{enumerate*}<Esc>k$i<Tab>\item<Space>
+autocmd FileType tex	inoremap	;elet	\begin{enumerate*}[label=\alph*)]<Enter><Enter>\end{enumerate*}<Esc>k$i<Tab>\item<Space>
+autocmd FileType tex	inoremap	;code	\begin{lstlisting}<Enter><Enter>\end{lstlisting}<Esc>k$i<Tab>
 """ END
