@@ -35,7 +35,7 @@ set nu				" Line numbers follow current line
 set relativenumber	" Follow current line numbers
 set noerrorbells	" Do not play a sound when an error occurs 
 set incsearch		" Highlight items as they are searched
-set scrolloff=3		" If cursor is at the bottom, you see the text after it
+set scrolloff=10	" If cursor is at the bottom, you see the text after it
 set signcolumn=yes	" Used for symbols in displaying error symbols, etc
 set linebreak		" New line only on new words, not in the middle of words
 set showtabline=2	" Always show tabline
