@@ -21,8 +21,7 @@ sudo -v
 
 # Cool site where you can search available packages:
 # https://archlinux.org/packages/
-pacman -Syu # Upgrade all pacman packages
-pacman -S cmatrix newsboat-git steam davinci-resolve discord ttf-ms-fonts zoom vlc gimp discord youtube-dl snapd brave calibre chromium neofetch obs-studio thunderbird yay-git mlocate unrar foobar xorg-xev rhythmbox toilet vim amfora ueberzug
+pacman --noconfirm --needed -Syu cmatrix newsboat-git steam davinci-resolve discord ttf-ms-fonts zoom vlc gimp discord youtube-dl snapd brave calibre chromium neofetch obs-studio thunderbird yay-git mlocate unrar foobar xorg-xev rhythmbox toilet vim amfora ueberzug
 # amfora                # Gemini page viewer
 # cmatrix               # Cuz it looks cool
 # newsboat              # My default RSS reader
