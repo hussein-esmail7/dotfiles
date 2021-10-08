@@ -12,7 +12,8 @@
 " =============================================================================
 
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'					" Colour theme
+" Plug 'morhetz/gruvbox'					" Colour theme
+Plug 'tomasiser/vim-code-dark'
 Plug 'vim-utils/vim-man'	
 Plug 'itchyny/lightline.vim'			" Lightline statusline
 " Plug 'git@guthub.com:ycm-core/YouCompleteMe.git'
@@ -35,7 +36,7 @@ set nu				" Line numbers follow current line
 set relativenumber	" Follow current line numbers
 set noerrorbells	" Do not play a sound when an error occurs 
 set incsearch		" Highlight items as they are searched
-set scrolloff=10	" If cursor is at the bottom, you see the text after it
+set scrolloff=5		" If cursor is at the bottom, you see the text after it
 set signcolumn=yes	" Used for symbols in displaying error symbols, etc
 set linebreak		" New line only on new words, not in the middle of words
 set showtabline=2	" Always show tabline
@@ -44,8 +45,7 @@ set cursorline		" Highlight the line the cursor is on
 
 set showcmd
 set ruler			" Shows the column and row num the cursor is on
-set splitbelow
-set splitright
+set splitright		" Split windows to the right rather than below
 set sc
 set ai				" set autoindent tab when going to new line if a tab is required
 set path+=**		" Search recursively instead of just in the directory you're in
@@ -67,8 +67,23 @@ set listchars=tab:\|\ ,eol:¬
 " === Colour Theme ===========================================================
 " =============================================================================
 
-colorscheme gruvbox
+colorscheme codedark
+" colorscheme gruvbox
 set background=dark
+
+let g:lightline = {
+	\ 'colorscheme': 'wombat',
+	\ 'active': {
+	\	'right': [	[ 'lineinfo' ], 
+	\				[ 'percent' ],
+	\				[ 'filetype' ], ]
+	\	}
+	\ }
+" Lightline perameters info:
+" lineinfo: Columns and row of the cursor
+" percent: Percent of the document you are at
+" fileencoding: Most likely utf-8. I removed this because it looked constant
+" filetype: Self-explanatory
 
 " =============================================================================
 " === Status Line ============================================================
@@ -97,6 +112,7 @@ let g:currentmode={
       \}
 
 set laststatus=2			" Always show status line (0 to disable)
+set noshowmode				" Do not show "-- INSERT --" after the status line
 set statusline=				" Reset what is stored there
 set statusline+=%0*\ %{toupper(g:currentmode[mode()])}   " Current mode
 set statusline+=%F			" File path to current file
@@ -106,12 +122,6 @@ set statusline+=\ %{&modified?'[+]':''}		" Show '[+]' if modified the file
 set statusline+=\ %=			" Align above left, rest right
 set statusline+=\ %p%%			" Percentage of the file the cursor is at
 set statusline+=\ %l:%c			" Line:Column
-
-" The lightline.vim theme
-let g:lightline = {
-      \ 'colorscheme': 'darcula',
-      \ }
-
 
 set splitright
 
@@ -130,9 +140,7 @@ au BufReadPost *
 " === Remaps =================================================================
 " =============================================================================
 
-
 """ Normal Mode Shortcuts
-nnoremap <Enter> i<Enter><Esc>
 nnoremap <C-J> <C-W><C-J> 
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
