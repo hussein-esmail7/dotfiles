@@ -140,6 +140,10 @@ au BufReadPost *
 " === Remaps =================================================================
 " =============================================================================
 
+""" Command line maps
+" Compiler program: https://github.com/hussein-esmail7/sh/blob/main/c.sh to F5
+nmap <f5> :!~/git/sh/c.sh %<cr><ENTER>
+
 """ Normal Mode Shortcuts
 nnoremap <C-J> <C-W><C-J> 
 nnoremap <C-K> <C-W><C-K>
