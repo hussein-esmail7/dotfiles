@@ -172,3 +172,4 @@ autocmd FileType tex	inoremap	;enum	\begin{enumerate*}<Enter><Enter>\end{enumera
 autocmd FileType tex	inoremap	;elet	\begin{enumerate*}[label=\alph*)]<Enter><Enter>\end{enumerate*}<Esc>k$i<Tab>\item<Space>
 autocmd FileType tex	inoremap	;code	\begin{lstlisting}<Enter><Enter>\end{lstlisting}<Esc>k$i<Tab>
 """ END
+
