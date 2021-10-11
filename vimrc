@@ -15,9 +15,11 @@ call plug#begin('~/.vim/plugged')
 " Plug 'morhetz/gruvbox'					" Colour theme
 Plug 'tomasiser/vim-code-dark'
 Plug 'vim-utils/vim-man'	
-Plug 'itchyny/lightline.vim'			" Lightline statusline
+" Plug 'itchyny/lightline.vim'			" Lightline statusline
 " Plug 'git@guthub.com:ycm-core/YouCompleteMe.git'
 Plug 'dkarter/bullets.vim'				" Bulleted lists
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " =============================================================================
@@ -68,62 +70,22 @@ set listchars=tab:\|\ ,eol:¬
 " =============================================================================
 
 colorscheme codedark
-" colorscheme gruvbox
 set background=dark
+let g:airline_theme = 'codedark'
 
-let g:lightline = {
-	\ 'colorscheme': 'wombat',
-	\ 'active': {
-	\	'right': [	[ 'lineinfo' ], 
-	\				[ 'percent' ],
-	\				[ 'filetype' ], ]
-	\	}
-	\ }
-" Lightline perameters info:
-" lineinfo: Columns and row of the cursor
-" percent: Percent of the document you are at
-" fileencoding: Most likely utf-8. I removed this because it looked constant
-" filetype: Self-explanatory
 
 " =============================================================================
 " === Status Line ============================================================
 " =============================================================================
 
-let g:currentmode={
-      \ 'n'  : 'Normal ',
-      \ 'no' : 'N·Operator Pending ',
-      \ 'v'  : 'Visual ',
-      \ 'V'  : 'V·Line ',
-      \ 'x22' : 'V·Block ',
-      \ 's'  : 'Select ',
-      \ 'S'  : 'S·Line ',
-      \ 'x19' : 'S·Block ',
-      \ 'i'  : 'Insert ',
-      \ 'R'  : 'R ',
-      \ 'Rv' : 'V·Replace ',
-      \ 'c'  : 'Command ',
-      \ 'cv' : 'Vim Ex ',
-      \ 'ce' : 'Ex ',
-      \ 'r'  : 'Prompt ',
-      \ 'rm' : 'More ',
-      \ 'r?' : 'Confirm ',
-      \ '!'  : 'Shell ',
-      \ 't'  : 'Terminal '
-      \}
-
 set laststatus=2			" Always show status line (0 to disable)
 set noshowmode				" Do not show "-- INSERT --" after the status line
-set statusline=				" Reset what is stored there
-set statusline+=%0*\ %{toupper(g:currentmode[mode()])}   " Current mode
-set statusline+=%F			" File path to current file
-set statusline+=
-
-set statusline+=\ %{&modified?'[+]':''}		" Show '[+]' if modified the file
-set statusline+=\ %=			" Align above left, rest right
-set statusline+=\ %p%%			" Percentage of the file the cursor is at
-set statusline+=\ %l:%c			" Line:Column
-
 set splitright
+let g:airline_section_b="%f %m"
+let g:airline_section_c=""
+let g:airline_section_y="" " Get rid of encoding type
+
+" let g:airline_detect_whitespace=0
 
 " =============================================================================
 " === Functions ==============================================================
@@ -132,9 +94,8 @@ set splitright
 " Go to the last cursor location when a file is opened, unless this is a
 " git commit (in which case it's annoying)
 au BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") && &filetype != "gitcommit" |
-        \ execute("normal `\"") |
-    \ endif
+\ if line("'\"") > 0 && line("'\"") <= line("$") && &filetype != "gitcommit" |
+\ execute("normal `\"") | endif
 
 " =============================================================================
 " === Remaps =================================================================
@@ -143,7 +104,6 @@ au BufReadPost *
 """ Command line maps
 " Compiler program: https://github.com/hussein-esmail7/sh/blob/main/c.sh to F5
 nmap <f5> :!~/git/sh/c.sh %<cr><ENTER>
-
 """ Normal Mode Shortcuts
 nnoremap <C-J> <C-W><C-J> 
 nnoremap <C-K> <C-W><C-K>
