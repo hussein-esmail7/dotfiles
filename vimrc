@@ -74,6 +74,7 @@ set background=dark
 
 " Allow transparent background in vim
 " https://stackoverflow.com/a/37720708/8100123
+" Noticed this only happens for only lines in the file, not whole window
 hi Normal guibg=NONE ctermbg=NONE
 
 " =============================================================================
