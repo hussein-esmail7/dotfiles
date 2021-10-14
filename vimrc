@@ -71,8 +71,10 @@ set listchars=tab:\|\ ,eol:¬
 
 colorscheme codedark
 set background=dark
-let g:airline_theme = 'codedark'
 
+" Allow transparent background in vim
+" https://stackoverflow.com/a/37720708/8100123
+hi Normal guibg=NONE ctermbg=NONE
 
 " =============================================================================
 " === Status Line ============================================================
@@ -81,6 +83,7 @@ let g:airline_theme = 'codedark'
 set laststatus=2			" Always show status line (0 to disable)
 set noshowmode				" Do not show "-- INSERT --" after the status line
 set splitright
+let g:airline_theme = 'codedark'
 let g:airline_section_b="%f %m"
 let g:airline_section_c=""
 let g:airline_section_y="" " Get rid of encoding type
@@ -115,14 +118,10 @@ nnoremap <C-H> <C-W><C-H>
 " === Text Replacements ======================================================
 " =============================================================================
 """ Replacements: Inline
-						inoremap	<		<><Left>
-						inoremap	(		()<Left>
-						inoremap	{		{}<Left>
-						inoremap	[		[]<Left>
-
 autocmd FileType tex	inoremap	;b		\textbf{}<Esc>T{i
 autocmd FileType tex	inoremap	`		`'<Left>
 autocmd FileType tex	inoremap	$		$$<Left>
+autocmd FileType tex	inoremap	;sec	\section{}<Esc>T{i
 autocmd FileType html	inoremap	<		<></><Left><Left><Left><Left>
 """ END
 
