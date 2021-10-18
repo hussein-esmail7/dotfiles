@@ -31,9 +31,9 @@ syntax on
 set tabstop=4 
 set softtabstop=4
 set shiftwidth=4
-set noswapfile		" Makes things nicer in each folder, does not create .swap files
+set noswapfile		" Does not create .swap files in each folder
 set smartindent		" Self-explanatory
-set exrc			" Source another .vimrc if another is there in the current directory 
+set exrc			" Source another .vimrc if there is one in current dir
 set nu				" Line numbers follow current line 
 set relativenumber	" Follow current line numbers
 set noerrorbells	" Do not play a sound when an error occurs 
@@ -49,17 +49,17 @@ set showcmd
 set ruler			" Shows the column and row num the cursor is on
 set splitright		" Split windows to the right rather than below
 set sc
-set ai				" set autoindent tab when going to new line if a tab is required
-set path+=**		" Search recursively instead of just in the directory you're in
-set wildmenu		" Display all matching files when we tab to complete what you are typing
+set ai				" set autoindent tab on new lines
+set path+=**		" Search recursively in directory
+set wildmenu		" Display all matching files when we tab to auto-complete 
 set undodir=~/.vim/undodir
 set undofile		" Store each command so they can be done in individual undo files at undodir
 set whichwrap+=>,l	" Line wrapping
 set whichwrap+=<,h	" Line wrapping
 
+set autowriteall	" When going to edit another document using ":e", save current
 set colorcolumn=80	" Default line width
 highlight ColorColumn ctermbg=0 guibg=lightgrey
-" map <Caps_Lock> <ESC>
 
 " Show tab indentation lines
 set list
@@ -107,7 +107,8 @@ au BufReadPost *
 
 """ Command line maps
 " Compiler program: https://github.com/hussein-esmail7/sh/blob/main/c.sh to F5
-nmap <f5> :!~/git/sh/c.sh %<cr><ENTER>
+map <f5> :!~/git/sh/c.sh %<cr><ENTER>
+map <f6> :setlocal spell! spelllang=en_ca<CR>
 """ Normal Mode Shortcuts
 nnoremap <C-J> <C-W><C-J> 
 nnoremap <C-K> <C-W><C-K>

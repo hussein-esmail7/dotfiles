@@ -11,6 +11,7 @@ sudo -v         # Ask for user password immediately so it doesn't keep asking mu
 echo -n "Email for git: "
 read GIT_EMAIL
 
+echo "source ~/git/dotfiles/bashrc" >> ~/.bashrc
 if [[ ! -z "$GIT_EMAIL" ]] ; then
     echo -n "Name for git: "
     read GIT_NAME

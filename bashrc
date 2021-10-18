@@ -41,6 +41,7 @@ alias c='${HOME}/${GIT}/sh/c.sh'
 # Always copy recursively, in case I'm copying a folder
 alias cp='cp -r' 
 
+alias g="cd ~/$GIT"
 alias b64='${HOME}/${GIT}/sh/b64.sh'
 alias config='$EDITOR ${HOME}/${GIT}/dotfiles/config/terminal/config'
 alias f="fzf --keep-right --prompt='Search: '"
