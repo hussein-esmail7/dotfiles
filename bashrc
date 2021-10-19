@@ -71,6 +71,9 @@ alias yt='youtube-dl -ic -R 100 --no-check-certificate --yes-playlist --skip-una
 alias yta='${HOME}/${CODE}/sh/yta.sh'
 alias ytw='${HOME}/${CODE}/sh/ytw.sh'
 alias z='zathura'
+alias zoom-vol="while true ; do amixer sset 'Capture' 100% > /dev/null ; done"
+# zoom-vol: When I use Zoom, it randomly lowers my microphone sensitivity.
+#	This constantly sets it to 100% (which is what it should stay at)
 
 # Prints ls with directories first, then files. Directories = blue, files = green. Directories are alphabetized, and so are files. Directories have a "/" at the end
 # FIX LATER

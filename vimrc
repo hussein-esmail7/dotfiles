@@ -125,6 +125,7 @@ autocmd FileType tex	inoremap	`		`'<Left>
 autocmd FileType tex	inoremap	$		$$<Left>
 autocmd FileType tex	inoremap	;sec	\section{}<Esc>T{i
 autocmd FileType html	inoremap	<		<></><Left><Left><Left><Left>
+autocmd FileType css	inoremap	{		{<Enter>}
 """ END
 
 """ Replacements: New lines
