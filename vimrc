@@ -121,6 +121,9 @@ nnoremap <C-H> <C-W><C-H>
 " =============================================================================
 """ Replacements: Inline
 autocmd FileType tex	inoremap	;b		\textbf{}<Esc>T{i
+autocmd FileType tex	inoremap	;i		\textit{}<Esc>T{i
+autocmd FileType tex	inoremap	;h		\textit{()}<Esc>T(i
+autocmd FileType tex	inoremap	;ul		\underline{}<Esc>T{i
 autocmd FileType tex	inoremap	`		`'<Left>
 autocmd FileType tex	inoremap	$		$$<Left>
 autocmd FileType tex	inoremap	;sec	\section{}<Esc>T{i
