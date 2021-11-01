@@ -88,6 +88,7 @@ let g:airline_theme = 'codedark'
 let g:airline_section_b="%f %m"
 let g:airline_section_c=""
 let g:airline_section_y="" " Get rid of encoding type
+let g:airline#extensions#whitespace#enabled = 0 " Disable errors on RS of bar
 
 " let g:airline_detect_whitespace=0
 
