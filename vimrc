@@ -128,8 +128,10 @@ autocmd FileType tex	inoremap	;ul		\underline{}<Esc>T{i
 autocmd FileType tex	inoremap	`		`'<Left>
 autocmd FileType tex	inoremap	$		$$<Left>
 autocmd FileType tex	inoremap	;sec	\section{}<Esc>T{i
+autocmd FileType tex	inoremap	;ssec	\subsection{}<Esc>T{i
+autocmd FileType tex	inoremap	;sssec	\subsubsection{}<Esc>T{i
 autocmd FileType html	inoremap	<		<></><Left><Left><Left><Left>
-autocmd FileType css	inoremap	{		{<Enter>}
+autocmd FileType css	inoremap	{		{<Enter><Tab><Enter>}<Esc>k0xA
 """ END
 
 """ Replacements: New lines
