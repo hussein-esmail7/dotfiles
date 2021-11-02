@@ -130,6 +130,7 @@ autocmd FileType tex	inoremap	$		$$<Left>
 autocmd FileType tex	inoremap	;sec	\section{}<Esc>T{i
 autocmd FileType tex	inoremap	;ssec	\subsection{}<Esc>T{i
 autocmd FileType tex	inoremap	;sssec	\subsubsection{}<Esc>T{i
+autocmd FileType tex	inoremap	;table	\begin{table}[]<Enter>\begin{tabular}{ll}<Enter>& \\<Enter>&<Enter>\end{tabular}<Enter>\end{table}
 autocmd FileType html	inoremap	<		<></><Left><Left><Left><Left>
 autocmd FileType css	inoremap	{		{<Enter><Tab><Enter>}<Esc>k0xA
 """ END
