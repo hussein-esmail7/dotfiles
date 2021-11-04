@@ -50,11 +50,14 @@ if [[ $os == "Linux" ]] ; then # Arch-based systems only
     # Whatsapp
 
 elif [[ $os == "Darwin" ]] ; then
-    cp "$DIR/vimrc" "~/.vimrc"
+	echo "source ~/git/dotfiles/vimrc" >> ~/.vimrc
 
-    # Install homebrew
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" 
-
+	# Install Plug for vim if it is not installed
+	mkdir -p "~/.vim/autoload/"
+	[[ ! -f "~/.vim/autoload/plug.vim" ]] ; curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    
+	# Install homebrew
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     sudo easy_install pip # Install pip
 
     # Install homebrew packages and apps
@@ -62,35 +65,41 @@ elif [[ $os == "Darwin" ]] ; then
     brew -q install amfora \
                     bash \
                     newsboat \
-                    steam \
-                    gimp \
-                    qlab \
-                    visual-studio-code \
-                    calibre \
+                    --cask steam \
+                    --cask gimp \
+                    --cask qlab \
+                    --cask visual-studio-code \
+                    --cask calibre \
                     chromedriver \
-                    discord \
-                    eclipse-java \
+                    --cask discord \
                     ffmpeg \
-                    get-lyrical \
-                    google-backup-and-sync \
+                    --cask google-backup-and-sync \
                     groff qs \
-                    megasync \
-                    messenger \
-                    microsoft-auto-update \
-                    microsoft-excel \
-                    microsoft-powerpoint \
-                    microsoft-teams \
-                    microsoft-word \
-                    minecraft \
-                    mutespotifyads \
-                    spotify \
-                    the-unarchiver \
+                    --cask microsoft-auto-update \
+                    --cask microsoft-excel \
+                    --cask microsoft-powerpoint \
+                    --cask microsoft-word \
+                    --cask mutespotifyads \
+                    --cask spotify \
+                    --cask the-unarchiver \
                     wget --with-libressl \
-                    whatsapp \
-                    zoomus \
                     terminal-notifier \
                     awk \
-                    node
+                    node \
+					mpv \
+					--cask vlc \
+					--cask loopback \
+					zathura \
+					zathura-pdf-mupdf \
+					ncdu \
+					cmatrix \
+					imagemagick \
+					musikcube \
+					tree \
+					toilet \
+					--cask iterm2 \
+					--cask brave-browser
+
     python3 -m pip install  base64 \
                             bs4 \
                             imdbpy \
@@ -154,7 +163,7 @@ elif [[ $os == "Darwin" ]] ; then
     defaults write com.apple.screencapture type -string "jpg"
     killall SystemUIServer
 
-    # I forget what these do...
+    # Disable autoplay videos in Safari
     defaults write com.apple.Safari WebKitMediaPlaybackAllowsInline -bool false
     defaults write com.apple.SafariTechnologyPreview WebKitMediaPlaybackAllowsInline -bool false
 
@@ -190,6 +199,16 @@ elif [[ $os == "Darwin" ]] ; then
     ln -s -f /usr/local/bin/python3.9 /usr/local/bin/python
 
     # Installing youtube-dl
-    sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl 
-    sudo chmod a+rx /usr/local/bin/youtube-dl 
+    # sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl 
+    # sudo chmod a+rx /usr/local/bin/youtube-dl 
+	# EDIT: Installing YouTubeDL from Homebrew
+
+	echo "Please change default browser to brave here..."
+	read "Press ENTER when done" nil
+
+	open https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne # Stylus
+	open https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm # ublock
+
+
+
 fi
