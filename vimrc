@@ -125,15 +125,18 @@ autocmd FileType tex	inoremap	;b		\textbf{}<Esc>T{i
 autocmd FileType tex	inoremap	;i		\textit{}<Esc>T{i
 autocmd FileType tex	inoremap	;h		\textit{()}<Esc>T(i
 autocmd FileType tex	inoremap	;ul		\underline{}<Esc>T{i
-autocmd FileType tex	inoremap	`		`'<Left>
-autocmd FileType tex	inoremap	$		$$<Left>
+autocmd FileType tex	inoremap	`		`'<Esc>hi
+autocmd FileType tex	inoremap	$		$$<Esc>hi
 autocmd FileType tex	inoremap	;sec	\section{}<Esc>T{i
 autocmd FileType tex	inoremap	;ssec	\subsection{}<Esc>T{i
 autocmd FileType tex	inoremap	;sssec	\subsubsection{}<Esc>T{i
-autocmd FileType tex	inoremap	;table	\begin{table}[]<Enter>\begin{tabular}{ll}<Enter>& \\<Enter>&<Enter>\end{tabular}<Enter>\end{table}
-autocmd FileType html	inoremap	<		<></><Left><Left><Left><Left>
+autocmd FileType tex	inoremap	;table	\begin{table}[]<Enter>\begin{tabular}{ll}<Enter>& \\<Enter>&<Enter>\end{tabular}<Enter>\end{table}<Esc>2kT&hi
+autocmd FileType tex	inoremap	;ltable	\begin{longtable}{l p{12cm}}<Enter>& \\<Enter>&<Enter>\end{longtable}<Esc>2kT&hi
+autocmd FileType html	inoremap	<		<></><Esc>4hi
 autocmd FileType css	inoremap	{		{<Enter><Tab><Enter>}<Esc>k0xA
-autocmd FileType css	inoremap	//		/*  */<Esc>hhi
+autocmd FileType css	inoremap	//		/*  */<Esc>2hi
+" TODO: Following line does not do anything yet. Maybe vim thinks there's comment?
+" autocmd FileType py		inoremap	'''		"""<Enter>"""<Esc>O
 """ END
 
 """ Replacements: New lines
