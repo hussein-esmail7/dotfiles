@@ -29,17 +29,26 @@ mkdir -p "~/.vim/autoload/"
 if [[ $os == "Linux" ]] ; then # Arch-based systems only
     ls -s "$DIR/vimrc" "~/.vimrc"
     
-    pacman --noconfirm --needed --noprogressbar -Syu newsboat-git steam discord ttf-ms-fonts zoom gimp discord youtube-dl snapd brave calibre chromium neofetch obs-studio thunderbird mlocate unrar foobar xorg-xev toilet vim amfora
-    pacman -S --noconfirm --needed --noprogressbar git base-devel yay
+    pacman --noconfirm --needed --noprogressbar -Syyu discord gimp discord youtube-dl calibre chromium neofetch obs-studio thunderbird mlocate unrar xorg-xev vim amfora
+	# Not a pacman package: ttf-ms-fonts, steam, zoom, snapd, foobar, toilet
+
+	# TODO: Manjaro only
+	pacman -Syyu snapd
+
+	# TODO: Change, this only works for Manjaro
+	# pacman -S --noconfirm --needed --noprogressbar git base-devel yay
+	# Arch version instructions here:
+	# https://www.debugpoint.com/2021/01/install-yay-arch/
 
     # Setup snapd
+	# TODO: Manjaro only
     systemctl enable --now snapd.socket
     ln -s /var/lib/snapd/snap /snap
 
     yay --nocleanmenu --noeditmenu --nodiffmenu --noupgrademenu --noredownload --combinedupgrade --save # Stop from asking for prompts
 
     yay -Syu --devel # Perform system upgrade, but also check for development package updates.
-    yay -Syuq gparted musikcube ytfzf minecraft-launcher spotify
+    yay -Syuq gparted musikcube ytfzf minecraft-launcher spotify brave newsboat-git
 
     systemctl enable sshd					# Allow incoming SSH on networks
     systemctl enable plexmediaserver        
