@@ -3,8 +3,9 @@
 # Used to check if this computer is on from local devices that PC is on
 @reboot cd /ison && python -m http.server 8001
 
-# @reboot setxkbmap -option caps:escape
-# 0 * * * * setxkbmap -option caps:escape
+@reboot polybar right &
+@reboot polybar main &
+@reboot polybar left &
 
 # Reload newsboat every 5 minutes
 */5 * * * * /usr/bin/newsboat -x reload

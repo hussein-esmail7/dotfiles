@@ -1,0 +1,33 @@
+Terminal Configuration Profile
+2021 11 25
+
+This file is my custom terminal configuration profile based on the Linux application "Konsole"'s settings menu.
+
+== General ==
+Initial Terminal Size: 110 columns x 28 rows
+
+== Appearance/"Color scheme & font" tab ==
+Font: SayceCodePro Nerd Font Mono 10pt
+
+== Appearance/"Color scheme & font" tab/Colors ("Edit...") ==
+Blur Background: Yes
+Background Transparency: 20%
+Colors: Linux Colours
+    Foreground: #b2b2b2
+    Backgound: #000000
+    Color 1: #000000
+    Color 2: #b21818
+    Color 3: #18b218
+    Color 4: #b26818
+    Color 5: #1818b2
+    Color 6: #b218b2
+    Color 7: #18b2b2
+    Color 8: #b2b2b2
+    
+== Appearance/"Cursor" tab ==
+Shape: I-beam
+Blinking: Enabled
+
+== Scrolling ==
+Scrollback: Unlimited
+Highlight the lines coming into view: No

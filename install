@@ -29,7 +29,7 @@ mkdir -p "~/.vim/autoload/"
 if [[ $os == "Linux" ]] ; then # Arch-based systems only
     ls -s "$DIR/vimrc" "~/.vimrc"
     
-    pacman --noconfirm --needed --noprogressbar -Syyu discord gimp discord youtube-dl calibre chromium neofetch obs-studio thunderbird mlocate unrar xorg-xev vim amfora
+    pacman --noconfirm --needed --noprogressbar -Syyu discord gimp discord youtube-dl calibre chromium neofetch obs-studio thunderbird mlocate unrar xorg-xev vim amfora mpv feh texlive-most zathura zathura-pdf-mupdf
 	# Not a pacman package: ttf-ms-fonts, steam, zoom, snapd, foobar, toilet
 
 	# TODO: Manjaro only
@@ -48,7 +48,7 @@ if [[ $os == "Linux" ]] ; then # Arch-based systems only
     yay --nocleanmenu --noeditmenu --nodiffmenu --noupgrademenu --noredownload --combinedupgrade --save # Stop from asking for prompts
 
     yay -Syu --devel # Perform system upgrade, but also check for development package updates.
-    yay -Syuq gparted musikcube ytfzf minecraft-launcher spotify brave newsboat-git
+    yay -Syuq gparted musikcube ytfzf minecraft-launcher spotify brave newsboat-git polybar
 
     systemctl enable sshd					# Allow incoming SSH on networks
     systemctl enable plexmediaserver        
