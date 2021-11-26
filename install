@@ -48,7 +48,8 @@ if [[ $os == "Linux" ]] ; then # Arch-based systems only
     yay --nocleanmenu --noeditmenu --nodiffmenu --noupgrademenu --noredownload --combinedupgrade --save # Stop from asking for prompts
 
     yay -Syu --devel # Perform system upgrade, but also check for development package updates.
-    yay -Syuq gparted musikcube ytfzf minecraft-launcher spotify brave newsboat-git polybar
+    yay -Syuq gparted musikcube ytfzf minecraft-launcher spotify brave newsboat-git polybar transmission-cli plex-media-server
+
 
     systemctl enable sshd					# Allow incoming SSH on networks
     systemctl enable plexmediaserver        

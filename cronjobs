@@ -1,4 +1,5 @@
 @reboot python3 /home/hussein/git/Medusa/start.py
+@reboot transmission-daemon &
 
 # Used to check if this computer is on from local devices that PC is on
 @reboot cd /ison && python -m http.server 8001
