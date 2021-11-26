@@ -29,7 +29,7 @@ mkdir -p "~/.vim/autoload/"
 if [[ $os == "Linux" ]] ; then # Arch-based systems only
     ls -s "$DIR/vimrc" "~/.vimrc"
     
-    pacman --noconfirm --needed --noprogressbar -Syyu discord gimp discord youtube-dl calibre chromium neofetch obs-studio thunderbird mlocate unrar xorg-xev vim amfora mpv feh texlive-most zathura zathura-pdf-mupdf
+    pacman --noconfirm --needed --noprogressbar -Syyu discord gimp discord youtube-dl calibre chromium neofetch obs-studio thunderbird mlocate unrar xorg-xev vim amfora mpv feh texlive-most zathura zathura-pdf-mupdf tree
 	# Not a pacman package: ttf-ms-fonts, steam, zoom, snapd, foobar, toilet
 
 	# TODO: Manjaro only
