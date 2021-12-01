@@ -109,7 +109,8 @@ au BufReadPost *
 """ Command line maps
 " Compiler program: https://github.com/hussein-esmail7/sh/blob/main/c.sh to F5
 map <f5> :!~/git/sh/c.sh %<cr><ENTER>
-map <f6> :setlocal spell! spelllang=en_ca<CR>
+map <f6> :!~/git/sh/openpdf.sh %<cr><ENTER>
+map <f7> :setlocal spell! spelllang=en_ca<CR>
 """ Normal Mode Shortcuts
 nnoremap <C-J> <C-W><C-J> 
 nnoremap <C-K> <C-W><C-K>
