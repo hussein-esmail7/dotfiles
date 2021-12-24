@@ -29,8 +29,10 @@ mkdir -p "~/.vim/autoload/"
 if [[ $os == "Linux" ]] ; then # Arch-based systems only
     ls -s "$DIR/vimrc" "~/.vimrc"
     
-    pacman --noconfirm --needed --noprogressbar -Syyu discord gimp discord youtube-dl calibre chromium neofetch obs-studio thunderbird mlocate unrar xorg-xev vim amfora mpv feh texlive-most zathura zathura-pdf-mupdf tree krename kid3 youtube-dl
+    pacman --noconfirm --needed --noprogressbar -Syyu discord gimp discord youtube-dl calibre chromium neofetch obs-studio thunderbird mlocate unrar xorg-xev vim amfora mpv feh zathura zathura-pdf-mupdf tree krename kid3 youtube-dl texlive-installer
 	# Not a pacman package: ttf-ms-fonts, steam, zoom, snapd, foobar
+
+	# TODO: To be done manually: Run texlive-installer after instaled for CLI
 
 	# TODO: Manjaro only
 	pacman -Syyu snapd
