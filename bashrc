@@ -18,6 +18,7 @@ export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/X11/bin
 export PYTHONPATH=$PYTHONPATH:$HOME/test/site-packages
+export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 musikcube # Used to get musikcube to work
 
 
 # Setting history to unlimited
