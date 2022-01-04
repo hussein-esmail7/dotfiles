@@ -123,7 +123,7 @@ nnoremap Y y$
 " =============================================================================
 " === Text Replacements ======================================================
 " =============================================================================
-""" LaTeX
+""" Replacements: Inline
 autocmd FileType tex	inoremap	;b		\textbf{}<Esc>T{i
 autocmd FileType tex	inoremap	;i		\textit{}<Esc>T{i
 autocmd FileType tex	inoremap	;h		\textit{()}<Esc>T(i
@@ -135,24 +135,17 @@ autocmd FileType tex	inoremap	;ssec	\subsection{}<Esc>T{i
 autocmd FileType tex	inoremap	;sssec	\subsubsection{}<Esc>T{i
 autocmd FileType tex	inoremap	;table	\begin{table}[h]<Enter>\begin{tabular}{ll}<Enter>& \\<Enter>&<Enter>\end{tabular}<Enter>\end{table}<Esc>2kT&hi
 autocmd FileType tex	inoremap	;ltable	\begin{longtable}{l p{12cm}}<Enter>& \\<Enter>&<Enter>\end{longtable}<Esc>2kT&hi
-autocmd FileType tex	inoremap	;list	\begin{itemize*}<Enter><Enter>\end{itemize*}<Esc>k$i<Tab>\item<Space>
-autocmd FileType tex	inoremap	;enum	\begin{enumerate*}<Enter><Enter>\end{enumerate*}<Esc>k$i<Tab>\item<Space>
-autocmd FileType tex	inoremap	;elet	\begin{enumalpha*}<Enter><Enter>\end{enumalpha*}<Esc>k$i<Tab>\item<Space>
-autocmd FileType tex	inoremap	;code	\begin{lstlisting}<Enter><Enter>\end{lstlisting}<Esc>k$i<Tab>
-autocmd FileType tex	inoremap	;center	\begin{center}<Enter><Enter>\end{center}<Esc>k$i<Tab>
-""" END
-
-""" HTML
 autocmd FileType html	inoremap	<		<></><Esc>4hi
-""" END
-
-""" CSS
 autocmd FileType css	inoremap	{		{<Enter><Tab><Enter>}<Esc>k0xA
 autocmd FileType css	inoremap	//		/*  */<Esc>2hi
-""" END
-
-""" Python
 " TODO: Following line does not do anything yet. Maybe vim thinks there's comment?
 " autocmd FileType py		inoremap	'''		"""<Enter>"""<Esc>O
+""" END
+
+""" Replacements: New lines
+autocmd FileType tex	inoremap	;list	\begin{itemize*}<Enter><Enter>\end{itemize*}<Esc>k$i<Tab>\item<Space>
+autocmd FileType tex	inoremap	;enum	\begin{enumerate*}<Enter><Enter>\end{enumerate*}<Esc>k$i<Tab>\item<Space>
+autocmd FileType tex	inoremap	;elet	\begin{enumerate*}[label=\alph*)]<Enter><Enter>\end{enumerate*}<Esc>k$i<Tab>\item<Space>
+autocmd FileType tex	inoremap	;code	\begin{lstlisting}<Enter><Enter>\end{lstlisting}<Esc>k$i<Tab>
 """ END
 
