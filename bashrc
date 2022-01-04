@@ -18,6 +18,8 @@ export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/X11/bin
 export PYTHONPATH=$PYTHONPATH:$HOME/test/site-packages
+export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 musikcube # Used to get musikcube to work
+
 
 # Setting history to unlimited
 export HISTSIZE=-1 
@@ -88,6 +90,9 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then # Linux System
     alias y="yay"
     alias p="sudo pacman"
     alias ytfzf="ytfzf -t --preview-side=right"
+	export PATH=$PATH:/usr/local/texlive/2021/bin/x86_64-linux
+	export MANPATH=$MANPATH:/usr/local/texlive/2021/texmf-dist/doc/man
+	export INFOPATH=$INFOPATH:/usr/local/texlive/2021/texmf-dist/doc/info
 elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS System
 	export PYTHONPATH=$PYTHONPATH:/System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/site-packages/
     export PATH=$PATH:${HOME}/Library/Python/3.9/bin
