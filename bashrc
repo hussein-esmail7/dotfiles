@@ -74,6 +74,7 @@ alias yta='${HOME}/${CODE}/sh/yta.sh'
 alias ytw='${HOME}/${CODE}/sh/ytw.sh'
 alias z='zathura'
 alias zoom-vol="while true ; do amixer sset 'Capture' 100% > /dev/null ; done"
+alias rss="python3 ${HOME}/git/rss-parsers/all.py"
 # zoom-vol: When I use Zoom, it randomly lowers my microphone sensitivity.
 #	This constantly sets it to 100% (which is what it should stay at)
 
