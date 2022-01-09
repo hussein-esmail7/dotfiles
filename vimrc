@@ -140,7 +140,7 @@ autocmd FileType tex	inoremap	;table	\begin{table}[h]<Enter>\begin{tabular}{ll}<
 autocmd FileType tex	inoremap	;ltable	\begin{longtable}{l p{12cm}}<Enter>& \\<Enter>&<Enter>\end{longtable}<Esc>2kT&hi
 autocmd FileType tex	inoremap	;list	\begin{itemize*}<Enter><Enter>\end{itemize*}<Esc>k$i<Tab>\item<Space>
 autocmd FileType tex	inoremap	;enum	\begin{enumerate*}<Enter><Enter>\end{enumerate*}<Esc>k$i<Tab>\item<Space>
-autocmd FileType tex	inoremap	;elet	\begin{enumalpha*}<Enter><Enter>\end{enumalpha*}<Esc>k$i<Tab>\item<Space>
+autocmd FileType tex	inoremap	;elet	\begin{enumalph*}<Enter><Enter>\end{enumalph*}<Esc>k$i<Tab>\item<Space>
 autocmd FileType tex	inoremap	;code	\begin{lstlisting}<Enter><Enter>\end{lstlisting}<Esc>k$i<Tab>
 autocmd FileType tex	inoremap	;center	\begin{center}<Enter><Enter>\end{center}<Esc>k$i<Tab>
 """ END
