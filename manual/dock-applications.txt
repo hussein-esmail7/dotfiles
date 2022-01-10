@@ -1,0 +1,12 @@
+Dock Applications
+2022 01 10
+
+These are the apps that are in my Dock in the correct order at the time
+
+Linux PC - 2021 01 10 11:21am
+1. Dolphin (file manager)
+2. Brave Browser
+3. Microsoft Teams
+4. Discord
+5. Konsole
+6. Zoom

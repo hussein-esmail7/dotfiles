@@ -3,11 +3,14 @@
 # {Name} - {keyword} - {Query URL}
 # Current default: Brave Search Beta (b)
 
-Brave Search Beta	- b   - https://search.brave.com/search?q=%s&source=desktop
-Amazon.ca			- az  - https://www.amazon.ca/s?k=%s
-AUR					- aur - https://aur.archlinux.org/packages/?O=0&SeB=nd&K=%s&outdated=&SB=n&SO=a&PP=250&do_Search=Go
-Downloads Forum		- dl  - https://forum.snahp.it/search.php?keywords=%s&sf=titleonly
-Kijiji				- k   - https://www.kijiji.ca/b-city-of-toronto/%s/k0l1700273?rb=true&dc=true
-Libgen				- lib - http://libgen.is/search.php?req=%s
+Brave Search Beta	- b		- https://search.brave.com/search?q=%s&source=desktop
+Amazon.ca			- az	- https://www.amazon.ca/s?k=%s
+AUR					- aur	- https://aur.archlinux.org/packages/?O=0&SeB=nd&K=%s&outdated=&SB=n&SO=a&PP=250&do_Search=Go
+Downloads Forum		- dl	- https://fora.snahp.eu/search.php?keywords=%s&sf=titleonly
+Kijiji				- k		- https://www.kijiji.ca/b-city-of-toronto/%s/k0l1700273?rb=true&dc=true
+Libgen				- lib	- http://libgen.is/search.php?req=%s
 Stack Overflow		- stack - https://stackoverflow.com/search?q=%s
-YouTube				- yt  - https://www.youtube.com/results?search_query=%s
+YouTube				- yt	- https://www.youtube.com/results?search_query=%s
+Google				- g		- {google:baseURL}search?q=%s
+GitHub				- gh	- https://github.com/search?q=%s&ref=opensearch
+

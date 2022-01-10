@@ -1,7 +1,8 @@
 Terminal Configuration Profile
 2021 11 25
 
-This file is my custom terminal configuration profile based on the Linux application "Konsole"'s settings menu.
+This file is my custom terminal configuration profile based on the Linux
+application "Konsole"'s settings menu.
 
 == General ==
 Initial Terminal Size: 110 columns x 28 rows
