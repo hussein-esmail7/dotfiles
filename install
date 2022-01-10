@@ -32,6 +32,10 @@ if [[ $os == "Linux" ]] ; then # Arch-based systems only
     pacman --noconfirm --needed --noprogressbar -Syyu discord gimp discord youtube-dl calibre chromium neofetch obs-studio thunderbird mlocate unrar xorg-xev vim amfora mpv feh zathura zathura-pdf-mupdf tree krename kid3 youtube-dl texlive-installer
 	# Not a pacman package: ttf-ms-fonts, steam, zoom, snapd, foobar
 
+	# TODO: Install Zoom at https://zoom.us/download#client_4meeting
+	# TODO: After installing the Zoom zip file, run this in your CWD:
+	#		sudo pacman -U zoom_x86_64.pkg.tar.xz
+
 	# TODO: To be done manually: Run texlive-installer after instaled for CLI
 
 	# TODO: Manjaro only
