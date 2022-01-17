@@ -68,6 +68,9 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 set list
 set listchars=tab:\|\ ,eol:¬
 
+" Remove trailing whitespaces on save
+autocmd BufWritePre * :%s/\s\+$//e
+
 " =============================================================================
 " === Colour Theme ===========================================================
 " =============================================================================
