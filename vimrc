@@ -49,9 +49,10 @@ set spelllang=en_ca	" Default language
 set cursorline		" Highlight the line the cursor is on
 set hlsearch		" Highlight items when searching them
 
-set showcmd
+set showcmd			" Show commands in bottom right corner while typing it
 set ruler			" Shows the column and row num the cursor is on
 set splitright		" Split windows to the right rather than below
+set splitbelow		" Split windows to bottom rather then above
 set sc
 set autoindent		" set autoindent tab on new lines
 set copyindent		" copy the previous indentation on autoindenting
