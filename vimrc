@@ -78,7 +78,7 @@ set list
 set listchars=tab:\|\ ,eol:¬
 
 " Remove trailing whitespaces on save
-autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :keepjumps :%s/\s+$//e
 
 " when vimrc is edited, reload it
 autocmd bufwritepost .vimrc source %

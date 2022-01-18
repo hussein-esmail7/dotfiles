@@ -6,7 +6,7 @@
 #                                      ▄  █
 #                                       ▀▀
 
-export EDITOR=vim 
+export EDITOR=vim
 export BROWSER=/usr/bin/brave       # Default browser to Brave instead of Firefox
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
@@ -22,7 +22,7 @@ export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 musikcube # Used to get musikcube to 
 
 
 # Setting history to unlimited
-export HISTSIZE=-1 
+export HISTSIZE=-1
 export HISTFILESIZE=-1
 
 export BASH_SILENCE_DEPRECATION_WARNING=1 # Get rid of "The interactive shell is zsh" message
@@ -41,11 +41,11 @@ alias pyf='cd ~/Documents/Coding/py/Finished'
 alias c='${HOME}/${GIT}/sh/c.sh'
 
 # Always copy recursively, in case I'm copying a folder
-alias cp='cp -r' 
+alias cp='cp -r'
 
 alias g="cd ~/$GIT"
 alias b64='${HOME}/${GIT}/sh/b64.sh'
-alias config='$EDITOR ${HOME}/${GIT}/dotfiles/config/terminal/config'
+alias config='$EDITOR ${HOME}/${GIT}/dotfiles/bashrc'
 alias f="fzf --keep-right --prompt='Search: '"
 alias gitpush='${HOME}/${GIT}/sh/gitpush.sh'
 alias cheat='${HOME}/${GIT}/sh/cheatsheet.sh'
@@ -87,7 +87,7 @@ alias rss="python3 ${HOME}/git/rss-parsers/all.py"
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then # Linux System
     alias todo='$EDITOR ${HOME}/Downloads/todo.txt' # Quickly open my todo list
     alias spot='xdg-open `spot-f` &'
-    alias school='xdg-open "${HOME}/${SCHOOL}" &' 
+    alias school='xdg-open "${HOME}/${SCHOOL}" &'
     alias y="yay"
     alias p="sudo pacman"
     alias ytfzf="ytfzf -t --preview-side=right"
@@ -101,7 +101,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS System
     export PATH=$PATH:/Library/TeX/texbin/
     export PATH=$PATH:/Library/TeX/texbin//
     export PATH=$PATH:/usr/local/texlive/2020basic/bin/universal-darwin
-    
+
 	alias todo='open ${HOME}/Downloads/todo.txt' # Quickly open my todo list
     alias spot='open `spot-f`'
     alias text='${HOME}/Documents/Coding/sh/text.sh'
