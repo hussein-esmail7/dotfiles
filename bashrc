@@ -45,6 +45,7 @@ alias cp='cp -r'
 
 alias g="cd ~/$GIT"
 alias b64='${HOME}/${GIT}/sh/b64.sh'
+alias bulkrename='${HOME}/${GIT}/sh/bulkrename.sh'
 alias config='$EDITOR ${HOME}/${GIT}/dotfiles/bashrc'
 alias f="fzf --keep-right --prompt='Search: '"
 alias gitpush='${HOME}/${GIT}/sh/gitpush.sh'
