@@ -78,8 +78,14 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 set list
 set listchars=tab:\|\ ,eol:¬
 
-" Remove trailing whitespaces on save
-autocmd BufWritePre * :keepjumps :%s/\s+$//e
+" Remove trailing whitespaces on save without moving cursor
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+autocmd BufWritePre * call TrimWhitespace()
+
 
 " when vimrc is edited, reload it
 autocmd bufwritepost .vimrc source %
