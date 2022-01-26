@@ -28,7 +28,7 @@ mkdir -p "~/.vim/autoload/"
 
 if [[ $os == "Linux" ]] ; then # Arch-based systems only
     ls -s "$DIR/vimrc" "~/.vimrc"
-    
+
     pacman --noconfirm --needed --noprogressbar -Syyu discord gimp discord youtube-dl calibre chromium neofetch obs-studio thunderbird mlocate unrar xorg-xev vim amfora mpv feh zathura zathura-pdf-mupdf tree krename kid3 youtube-dl texlive-installer
 	# Not a pacman package: ttf-ms-fonts, steam, zoom, snapd, foobar
 
@@ -58,12 +58,38 @@ if [[ $os == "Linux" ]] ; then # Arch-based systems only
 
 
     systemctl enable sshd					# Allow incoming SSH on networks
-    systemctl enable plexmediaserver        
-    systemctl enable transmission-daemon    
+    systemctl enable plexmediaserver
+    systemctl enable transmission-daemon
 
     # Other apps I would like to install via terminal commands
     # megasync
     # Whatsapp
+
+    # Installing pip packages
+    pip install base64
+    pip install bs4
+    pip install imdbpy
+    pip install pick
+    pip install pillow
+    pip install py2app
+    pip install pygame
+    pip install PyGetWindow
+    pip install pyperclip
+    pip install pyqrcode
+    pip install pyserial
+    pip install pytesseract
+    pip install pytube
+    pip install rawpy
+    pip install requests
+    pip install selenium
+    pip install Send2Trash
+    pip install spotipy
+    pip install termcolor
+    pip install numpy
+    pip install termcolor
+    pip install tkinter
+    pip install unidecode
+    pip install webbrowser
 
 elif [[ $os == "Darwin" ]] ; then
 	echo "source ~/git/dotfiles/vimrc" >> ~/.vimrc
@@ -71,7 +97,7 @@ elif [[ $os == "Darwin" ]] ; then
 	# Install Plug for vim if it is not installed
 	mkdir -p "~/.vim/autoload/"
 	[[ ! -f "~/.vim/autoload/plug.vim" ]] ; curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    
+
 	# Install homebrew
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     sudo easy_install pip # Install pip
@@ -184,7 +210,7 @@ elif [[ $os == "Darwin" ]] ; then
     defaults write com.apple.SafariTechnologyPreview WebKitMediaPlaybackAllowsInline -bool false
 
     # Turn off the creation of .DS_Store files
-    defaults write com.apple.desktopservices DSDontWriteNetworkStores true 
+    defaults write com.apple.desktopservices DSDontWriteNetworkStores true
     defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
     defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
@@ -215,8 +241,8 @@ elif [[ $os == "Darwin" ]] ; then
     ln -s -f /usr/local/bin/python3.9 /usr/local/bin/python
 
     # Installing youtube-dl
-    # sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl 
-    # sudo chmod a+rx /usr/local/bin/youtube-dl 
+    # sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
+    # sudo chmod a+rx /usr/local/bin/youtube-dl
 	# EDIT: Installing YouTubeDL from Homebrew
 
 	echo "Please change default browser to brave here..."

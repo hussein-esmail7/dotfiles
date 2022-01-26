@@ -17,6 +17,7 @@ export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/X11/bin
+export PATH=$PATH:$HOME/.local/bin
 export PYTHONPATH=$PYTHONPATH:$HOME/test/site-packages
 export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 musikcube # Used to get musikcube to work
 
@@ -43,7 +44,7 @@ alias c='${HOME}/${GIT}/sh/c.sh'
 # Always copy recursively, in case I'm copying a folder
 alias cp='cp -r'
 
-alias g="cd ~/$GIT"
+alias g='${HOME}/${GIT}/sh/g.sh'
 alias b64='${HOME}/${GIT}/sh/b64.sh'
 alias bulkrename='${HOME}/${GIT}/sh/bulkrename.sh'
 alias config='$EDITOR ${HOME}/${GIT}/dotfiles/bashrc'
