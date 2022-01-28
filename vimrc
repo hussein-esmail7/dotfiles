@@ -171,6 +171,7 @@ autocmd FileType css	inoremap	//		/*  */<Esc>2hi
 """ END
 
 """ Replacements: New lines
+autocmd FileType tex	inoremap	;env	\begin{}<Enter>\end{}<Esc>k$i
 autocmd FileType tex	inoremap	;list	\begin{itemize*}<Enter><Enter>\end{itemize*}<Esc>k$i<Tab>\item<Space>
 autocmd FileType tex	inoremap	;enum	\begin{enumerate*}<Enter><Enter>\end{enumerate*}<Esc>k$i<Tab>\item<Space>
 autocmd FileType tex	inoremap	;elet	\begin{enumalph*}<Enter><Enter>\end{enumalph*}<Esc>k$i<Tab>\item<Space>
