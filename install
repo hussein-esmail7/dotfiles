@@ -12,6 +12,7 @@ echo -n "Email for git: "
 read GIT_EMAIL
 
 echo "source ~/git/dotfiles/bashrc" >> ~/.bashrc
+echo "source ~/git/dotfiles/vimrc.vim" >> ~/.vimrc
 if [[ ! -z "$GIT_EMAIL" ]] ; then
     echo -n "Name for git: "
     read GIT_NAME
@@ -27,9 +28,9 @@ mkdir -p "~/.vim/autoload/"
 # From this point on, all the commands are operating-system specific
 
 if [[ $os == "Linux" ]] ; then # Arch-based systems only
-    ls -s "$DIR/vimrc" "~/.vimrc"
 
-    pacman --noconfirm --needed --noprogressbar -Syyu discord gimp discord youtube-dl calibre chromium neofetch obs-studio thunderbird mlocate unrar xorg-xev vim amfora mpv feh zathura zathura-pdf-mupdf tree krename kid3 youtube-dl texlive-installer
+    sudo pacman-key --populate archlinux
+    sudo pacman --noconfirm --needed --noprogressbar -Syyu git discord gimp discord youtube-dl calibre chromium neofetch obs-studio thunderbird mlocate unrar xorg-xev vim amfora mpv feh zathura zathura-pdf-mupdf tree krename kid3 archlinux-keyring base-devel python-pip
 	# Not a pacman package: ttf-ms-fonts, steam, zoom, snapd, foobar
 
 	# TODO: Install Zoom at https://zoom.us/download#client_4meeting
@@ -39,7 +40,7 @@ if [[ $os == "Linux" ]] ; then # Arch-based systems only
 	# TODO: To be done manually: Run texlive-installer after instaled for CLI
 
 	# TODO: Manjaro only
-	pacman -Syyu snapd
+	# pacman -Syyu snapd
 
 	# TODO: Change, this only works for Manjaro
 	# pacman -S --noconfirm --needed --noprogressbar git base-devel yay
@@ -47,14 +48,22 @@ if [[ $os == "Linux" ]] ; then # Arch-based systems only
 	# https://www.debugpoint.com/2021/01/install-yay-arch/
 
     # Setup snapd
-	# TODO: Manjaro only
-    systemctl enable --now snapd.socket
-    ln -s /var/lib/snapd/snap /snap
+# TODO: Manjaro only
+
+# Install yay
+	cd /opt
+	sudo git clone https://aur.archlinux.org/yay-git.git
+	sudo chown -R $(whoami):$(whoami) ./yay-git
+	cd yay-git
+	makepkg -si
+
+    # systemctl enable --now snapd.socket
+    # ln -s /var/lib/snapd/snap /snap
 
     yay --nocleanmenu --noeditmenu --nodiffmenu --noupgrademenu --noredownload --combinedupgrade --save # Stop from asking for prompts
 
     yay -Syu --devel # Perform system upgrade, but also check for development package updates.
-    yay -Syuq gparted musikcube ytfzf minecraft-launcher spotify brave newsboat-git polybar transmission-cli plex-media-server toilet
+    yay -Syuq gparted musikcube ytfzf minecraft-launcher spotify brave-bin newsboat-git polybar transmission-cli plex-media-server toilet texlive-installer
 
 
     systemctl enable sshd					# Allow incoming SSH on networks

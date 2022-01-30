@@ -1,0 +1,26 @@
+System Settings
+Appearance -> Global Theme -> Breeze Dark
+Appearance -> Window Decorations > Titlebar Buttons (tab): [Close] [Maximize] [Minimize] [Application Menu] [More actions for this window] Titlebar
+Appearance -> Cursors -> Adwaita
+Appearance -> Spash Screen -> None
+
+Workspace Behaviour -> General Behaviour -> Clicking on files or folders: Selects them
+Workspace Behaviour -> Desktop Effects -> Blur: Uncheck
+
+Shortcuts -> Shortcuts -> Audio Volume -> Volume up: Add F12
+Shortcuts -> Shortcuts -> Audio Volume -> Volume down: Add F11
+Shortcuts -> Shortcuts -> KWin -> Close Window: Add Ctrl+Q
+Shortcuts -> Shortcuts -> Media Controller -> Media playback next: Add F10
+Shortcuts -> Shortcuts -> Media Controller -> Play/Pause media playback: Add F9
+Shortcuts -> Shortcuts -> Create Folder (via search) -> Add F8
+
+Startup and Shutdown -> Login Screen (SDDM) -> Breeze
+
+Search -> File Search -> Enable File Search: Uncheck
+
+Input Devices -> Keyboard -> Hardware -> NumLock on Plasma Startup: Turn on
+Input Devices -> Keyboard -> Advanced -> Check "Configure keyboard options"
+Input Devices -> Keyboard -> Advanced -> Check "Make Caps Lock an additional Esc, but Shift + Caps Lock is the regular Caps Lock"
+Input Devices -> Mouse -> Pointer Speed: 4/11
+Input Devices -> Mouse -> Scrolling -> Invert scroll direction: Check
+
