@@ -45,23 +45,23 @@ alias c='${HOME}/${GIT}/sh/c.sh'
 alias cp='cp -r'
 
 alias g='${HOME}/${GIT}/sh/g.sh'
-alias b64='${HOME}/${GIT}/sh/b64.sh'
+alias b64='${HOME}/${GIT}/sh/b64.sh' # Base64 converter program
 alias bulkrename='${HOME}/${GIT}/sh/bulkrename.sh'
 alias config='$EDITOR ${HOME}/${GIT}/dotfiles/bashrc'
 alias f="fzf --keep-right --prompt='Search: '"
 alias gitpush='${HOME}/${GIT}/sh/gitpush.sh'
 alias cheat='${HOME}/${GIT}/sh/cheatsheet.sh'
 alias ip='${HOME}/${GIT}/sh/ip.sh'
-alias ls="ls -1p"
+alias ls="ls -1p" # How I like to see `ls`
 alias mkv='${HOME}/${CODE}/sh/mkv.sh'
 alias music='musikcube'
 alias mv='mv -i'
-alias news='pkill news ; newsboat -q'
+alias news='pkill news ; newsboat -q' # Newsboat, but kill any previous instances as well
 alias nicefont='toilet -f mono9'						# Nice title text
 alias now='date +"%Y %m %d"'
-alias pass='${HOME}/${CODE}/sh/pass.sh'
+alias pass='${HOME}/${CODE}/sh/pass.sh' # Program that generates a password
 alias pdf='${HOME}/${CODE}/sh/pdf.sh'
-alias plex='${HOME}/${GIT}/sh/plex.sh'
+alias plex='${HOME}/${GIT}/sh/plex.sh' # Program that tells if someone is using this computer to watch a movie via Plex Media Server
 alias rm='rm -i'
 alias school='cd && cd "$HOME/Documents/School - 1 University/1 Y1SU" && open .'
 alias server='python3 -m http.server'
@@ -69,13 +69,13 @@ alias template='${HOME}/${GIT}/template-maker/template-maker'
 alias text='${HOME}/${CODE}/sh/text.sh'
 alias update='${HOME}/${GIT}/sh/update.sh'
 alias v="vim"											# Editor shortcut
+alias vimrc="$EDITOR ~/git/dotfiles/vimrc.vim"	# Open vimrc quickly
 alias weather='curl wttr.in/Toronto'
 alias wget='wget -crq --show-progress'
 alias yt='youtube-dl -ic -R 100 --no-check-certificate --yes-playlist --skip-unavailable-fragments --restrict-filenames --sub-lang en --no-warnings --embed-subs --no-part -f best  -o "%(title)s.%(ext)s"'
 alias yta='${HOME}/${CODE}/sh/yta.sh'
 alias ytw='${HOME}/${CODE}/sh/ytw.sh'
 alias z='zathura'
-alias zoom-vol="while true ; do amixer sset 'Capture' 100% > /dev/null ; done"
 alias rss="python3 ${HOME}/git/rss-parsers/all.py"
 # zoom-vol: When I use Zoom, it randomly lowers my microphone sensitivity.
 #	This constantly sets it to 100% (which is what it should stay at)
