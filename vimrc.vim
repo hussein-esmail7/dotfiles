@@ -87,8 +87,9 @@ endfun
 autocmd BufWritePre * call TrimWhitespace()
 
 
-" when vimrc is edited, reload it
+" When vimrc is edited, reload it
 autocmd bufwritepost .vimrc source %
+autocmd bufwritepost vimrc.vim source %
 
 " =============================================================================
 " === Colour Theme ===========================================================
@@ -101,6 +102,10 @@ set background=dark
 " https://stackoverflow.com/a/37720708/8100123
 " Noticed this only happens for only lines in the file, not whole window
 hi Normal guibg=NONE ctermbg=NONE
+" EOL character with transparent background
+hi NonText guibg=NONE ctermbg=NONE
+
+hi EndOfBuffer guibg=NONE ctermbg=NONE
 
 " =============================================================================
 " === Status Line ============================================================
@@ -170,7 +175,12 @@ autocmd FileType css	inoremap	//		/*  */<Esc>2hi
 " autocmd FileType py		inoremap	'''		"""<Enter>"""<Esc>O
 """ END
 
+""" C
+autocmd FileType c	inoremap	///		/*  */<Esc>2hi
+""" END
+
 """ Replacements: New lines
+autocmd FileType tex	inoremap	;;		\item<Space>
 autocmd FileType tex	inoremap	;env	\begin{}<Enter>\end{}<Esc>k$i
 autocmd FileType tex	inoremap	;list	\begin{itemize*}<Enter><Enter>\end{itemize*}<Esc>k$i<Tab>\item<Space>
 autocmd FileType tex	inoremap	;enum	\begin{enumerate*}<Enter><Enter>\end{enumerate*}<Esc>k$i<Tab>\item<Space>

@@ -29,7 +29,7 @@ export HISTFILESIZE=-1
 export BASH_SILENCE_DEPRECATION_WARNING=1 # Get rid of "The interactive shell is zsh" message
 
 # Personal Variables used while in Terminal
-export SCHOOL="~/Documents/School/1\ Y3F"
+export SCHOOL="~/Documents/School/1\ Y3W"
 export GIT='git'
 export CODE='Documents/Coding'
 export SITE='/hdd1/Website/husseinesmail'
@@ -37,6 +37,9 @@ export SITE='/hdd1/Website/husseinesmail'
 # Quickly cd into my Python directory
 alias py='cd ~/Documents/Coding/py'
 alias pyf='cd ~/Documents/Coding/py/Finished'
+alias vcp="cd '/home/hussein/Documents/School/VCP/1 2021-22'"
+alias s="cd ~/Documents/School"
+alias g="cd ~/git"
 
 # Compile file program
 alias c='${HOME}/${GIT}/sh/c.sh'
@@ -44,7 +47,7 @@ alias c='${HOME}/${GIT}/sh/c.sh'
 # Always copy recursively, in case I'm copying a folder
 alias cp='cp -r'
 
-alias g='${HOME}/${GIT}/sh/g.sh'
+# alias g='${HOME}/${GIT}/sh/g.sh'
 alias b64='${HOME}/${GIT}/sh/b64.sh' # Base64 converter program
 alias bulkrename='${HOME}/${GIT}/sh/bulkrename.sh'
 alias config='$EDITOR ${HOME}/${GIT}/dotfiles/bashrc'
@@ -58,10 +61,12 @@ alias music='musikcube'
 alias mv='mv -i'
 alias news='pkill news ; newsboat -q' # Newsboat, but kill any previous instances as well
 alias nicefont='toilet -f mono9'						# Nice title text
+alias notes="cd ~/git/school-notes"
 alias now='date +"%Y %m %d"'
 alias pass='${HOME}/${CODE}/sh/pass.sh' # Program that generates a password
 alias pdf='${HOME}/${CODE}/sh/pdf.sh'
 alias plex='${HOME}/${GIT}/sh/plex.sh' # Program that tells if someone is using this computer to watch a movie via Plex Media Server
+alias rss="python3 ${HOME}/git/rss-parsers/all.py"
 alias rm='rm -i'
 alias school='cd && cd "$HOME/Documents/School - 1 University/1 Y1SU" && open .'
 alias server='python3 -m http.server'
@@ -76,7 +81,6 @@ alias yt='youtube-dl -ic -R 100 --no-check-certificate --yes-playlist --skip-una
 alias yta='${HOME}/${CODE}/sh/yta.sh'
 alias ytw='${HOME}/${CODE}/sh/ytw.sh'
 alias z='zathura'
-alias rss="python3 ${HOME}/git/rss-parsers/all.py"
 # zoom-vol: When I use Zoom, it randomly lowers my microphone sensitivity.
 #	This constantly sets it to 100% (which is what it should stay at)
 
