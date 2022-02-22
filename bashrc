@@ -61,7 +61,6 @@ alias music='musikcube'
 alias mv='mv -i'
 alias news='pkill news ; newsboat -q' # Newsboat, but kill any previous instances as well
 alias nicefont='toilet -f mono9'						# Nice title text
-alias notes="cd ~/git/school-notes"
 alias now='date +"%Y %m %d"'
 alias pass='${HOME}/${CODE}/sh/pass.sh' # Program that generates a password
 alias pdf='${HOME}/${CODE}/sh/pdf.sh'
@@ -112,6 +111,15 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS System
     alias spot='open `spot-f`'
     alias text='${HOME}/Documents/Coding/sh/text.sh'
 fi
+
+function notes() {
+	cd ~/git/school-notes ;
+	if [ ! -z "$1" ] ; then
+		echo "$1"
+	fi
+
+
+}
 
 function sitepush() {
 	# python3 "${HOME}/${GIT}/html2rss/html2rss.py" "$1"
