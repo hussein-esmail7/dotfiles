@@ -176,16 +176,26 @@ autocmd FileType css	inoremap	//		/*  */<Esc>2hi
 """ END
 
 """ C
+" New multiline comment
 autocmd FileType c	inoremap	///		/*  */<Esc>2hi
 """ END
 
 """ Replacements: New lines
-autocmd FileType tex	inoremap	;;		\item<Space>
+" New item on next line in itemize, enumerate, etc.
+autocmd FileType tex	inoremap	;;		<CR>\item<Space>
+" New environment
 autocmd FileType tex	inoremap	;env	\begin{}<Enter>\end{}<Esc>k$i
-autocmd FileType tex	inoremap	;list	\begin{itemize*}<Enter><Enter>\end{itemize*}<Esc>k$i<Tab>\item<Space>
+" New figure environment
+autocmd FileType tex	inoremap	;fig	\begin{figure}<Enter>\end{figure}<Esc>k$i
+" New itemize environment
+autocmd FileType tex	inoremap	;list	\begin{itemize*}<CR>\item <CR>\end{itemize*}<Esc>k$i<Space>
+" New enumerate environment
 autocmd FileType tex	inoremap	;enum	\begin{enumerate*}<Enter><Enter>\end{enumerate*}<Esc>k$i<Tab>\item<Space>
+" New enumalph* custom environment
 autocmd FileType tex	inoremap	;elet	\begin{enumalph*}<Enter><Enter>\end{enumalph*}<Esc>k$i<Tab>\item<Space>
+" New code environment
 autocmd FileType tex	inoremap	;code	\begin{lstlisting}<Enter><Enter>\end{lstlisting}<Esc>k$i<Tab>
+" New center environment
 autocmd FileType tex	inoremap	;center	\begin{center}<Enter><Enter>\end{center}<Esc>k$i<Tab>
 """ END
 
