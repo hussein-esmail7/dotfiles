@@ -1,20 +1,4 @@
 @reboot python3 /home/hussein/git/Medusa/start.py
 @reboot transmission-daemon &
 
-# Used to check if this computer is on from local devices that PC is on
-@reboot cd /ison && python -m http.server 8001
-
-@reboot polybar right &
-@reboot polybar main &
-@reboot polybar left &
-
-# Reload newsboat every 5 minutes
-*/5 * * * * /usr/bin/newsboat -x reload
-
-# Update search database for the 'locate' command
-*/30 * * * * /usr/bin/updatedb
-
-# Allow plex media server to access movies on my drives
-# Since it accesses it via a different user of a different group
-*/30 * * * * chmod 777 -R /hdd/Movies/*
-*/30 * * * * chmod 777 -R /hdd/TV/*
+@reboot /home/hussein/.config/polybar/launch.sh &
