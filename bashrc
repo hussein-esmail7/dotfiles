@@ -69,6 +69,7 @@ alias rss="python3 ${HOME}/git/rss-parsers/all.py"
 alias rm='rm -i'
 alias school='cd && cd "$HOME/Documents/School - 1 University/1 Y1SU" && open .'
 alias server='python3 -m http.server'
+alias t='${HOME}/${GIT}/template-maker/template-maker'
 alias template='${HOME}/${GIT}/template-maker/template-maker'
 alias text='${HOME}/${CODE}/sh/text.sh'
 alias update='${HOME}/${GIT}/sh/update.sh'
