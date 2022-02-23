@@ -182,7 +182,7 @@ autocmd FileType c	inoremap	///		/*  */<Esc>2hi
 
 """ Replacements: New lines
 " New item on next line in itemize, enumerate, etc.
-autocmd FileType tex	inoremap	;;		<CR>\item<Space>
+autocmd FileType tex	inoremap	;;		\item<Space>
 " New environment
 autocmd FileType tex	inoremap	;env	\begin{}<Enter>\end{}<Esc>k$i
 " New figure environment
@@ -190,9 +190,9 @@ autocmd FileType tex	inoremap	;fig	\begin{figure}<Enter>\end{figure}<Esc>k$i
 " New itemize environment
 autocmd FileType tex	inoremap	;list	\begin{itemize*}<CR>\item <CR>\end{itemize*}<Esc>k$i<Space>
 " New enumerate environment
-autocmd FileType tex	inoremap	;enum	\begin{enumerate*}<Enter><Enter>\end{enumerate*}<Esc>k$i<Tab>\item<Space>
+autocmd FileType tex	inoremap	;enum	\begin{enumerate*}<CR>\item <CR>\end{enumerate*}<Esc>k$i<Space>
 " New enumalph* custom environment
-autocmd FileType tex	inoremap	;elet	\begin{enumalph*}<Enter><Enter>\end{enumalph*}<Esc>k$i<Tab>\item<Space>
+autocmd FileType tex	inoremap	;elet	\begin{enumalph*}<CR>\item <CR>\end{enumalph*}<Esc>k$i<Space>
 " New code environment
 autocmd FileType tex	inoremap	;code	\begin{lstlisting}<Enter><Enter>\end{lstlisting}<Esc>k$i<Tab>
 " New center environment
