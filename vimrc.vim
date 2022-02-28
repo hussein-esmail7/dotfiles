@@ -148,6 +148,8 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 " Make Y yank till end of line
 nnoremap Y y$
+" Move anything after cursor to next line
+nnoremap H i<Enter><Esc>
 """ END
 
 " =============================================================================
