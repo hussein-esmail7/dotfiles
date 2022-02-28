@@ -10,3 +10,17 @@ Linux PC - 2021 01 10 11:21am
 4. Discord
 5. Konsole
 6. Zoom
+
+MacBook Pro - 2022 02 28 10:45am
+1. Finder
+2. iTunes/Music
+3. Mail
+4. Brave Browser
+5. Calendar
+6. Microsoft Teams
+7. Discord
+8. Messages
+9. Preview
+10. iTerm 2
+11. Zoom
+12. Notes
