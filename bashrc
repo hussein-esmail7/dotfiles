@@ -49,10 +49,12 @@ alias cp='cp -r'
 
 # alias g='${HOME}/${GIT}/sh/g.sh'
 alias b64='${HOME}/${GIT}/sh/b64.sh' # Base64 converter program
+alias bashrc='$EDITOR ${HOME}/${GIT}/dotfiles/bashrc'
 alias bulkrename='${HOME}/${GIT}/sh/bulkrename.sh'
 alias config='$EDITOR ${HOME}/${GIT}/dotfiles/bashrc'
 alias f="fzf --keep-right --prompt='Search: '"
 alias gitpush='${HOME}/${GIT}/sh/gitpush.sh'
+alias gs="git status"
 alias cheat='${HOME}/${GIT}/sh/cheatsheet.sh'
 alias ip='${HOME}/${GIT}/sh/ip.sh'
 alias ls="ls -1p" # How I like to see `ls`

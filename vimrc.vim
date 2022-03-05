@@ -115,10 +115,27 @@ set laststatus=2			" Always show status line (0 to disable)
 set noshowmode				" Do not show "-- INSERT --" after the status line
 set splitright
 let g:airline_theme = 'codedark'
-let g:airline_section_b="%f %m"
+" let g:airline_section_b="%f %m"
+" let g:airline_section_c=""
+" let g:airline_section_y="" " Get rid of encoding type
+let g:airline_detect_spell=0 " Turn off spell detection. Default = 1. If
+" This was on, it would show "SPELL [EN_CA]" beside mode
+let g:airline_section_b="%f %m" "
 let g:airline_section_c=""
 let g:airline_section_y="" " Get rid of encoding type
 let g:airline#extensions#whitespace#enabled = 0 " Disable errors on RS of bar
+"  let g:airline_section_a       (mode, crypt, paste, spell, iminsert)
+"  let g:airline_section_b       (hunks, branch)[*]
+"  let g:airline_section_c       (bufferline or filename, readonly)
+"  let g:airline_section_gutter  (csv)
+"  let g:airline_section_x       (tagbar, filetype, virtualenv)
+"  let g:airline_section_y       (fileencoding, fileformat, 'bom', 'eol')
+"  let g:airline_section_z       (percentage, line number, column number)
+"  let g:airline_section_error   (ycm_error_count, syntastic-err, eclim,
+"                                 languageclient_error_count)
+"  let g:airline_section_warning (ycm_warning_count, syntastic-warn,
+"                                 languageclient_warning_count, whitespace)
+
 
 " let g:airline_detect_whitespace=0
 
