@@ -1,0 +1,17 @@
+
+
+Itsycal Preferences:
+General Tab
+[x] Launch at login
+
+Appearance Tab
+[ ] Use outline icon
+[ ] Show month in icon
+[x] Show day of week in icon
+Datetime string format: y MM dd h:mm:ss b
+[ ] Hide icon
+Highlight: _MTWTF_
+[x] Show event dots
+[x] Show event colours
+[x] Show event location
+[ ] Show calendar weeks
