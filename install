@@ -120,6 +120,7 @@ elif [[ $os == "Darwin" ]] ; then
                     bash \
                     newsboat \
                     --cask steam \
+                    --cask itsycal \
                     --cask gimp \
                     --cask qlab \
                     --cask visual-studio-code \
