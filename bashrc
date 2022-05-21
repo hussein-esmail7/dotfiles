@@ -68,6 +68,7 @@ alias now='date +"%Y %m %d"'
 alias pass='${HOME}/${CODE}/sh/pass.sh' # Program that generates a password
 alias pdf='${HOME}/${CODE}/sh/pdf.sh'
 alias plex='${HOME}/${GIT}/sh/plex.sh' # Program that tells if someone is using this computer to watch a movie via Plex Media Server
+alias poly='/home/hussein/.config/polybar/launch.sh' # Launches polybar on Linux
 alias rss="python3 ${HOME}/git/rss-parsers/all.py"
 alias rm='rm -i'
 alias school='cd && cd "$HOME/Documents/School - 1 University/1 Y1SU" && open .'
