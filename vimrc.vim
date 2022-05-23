@@ -26,7 +26,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
 Plug 'chrisbra/changesPlugin'
 Plug 'tomtom/quickfixsigns_vim'
-Plug 'neoclide/coc-git'
+" Plug 'neoclide/coc-git'
 
 call plug#end()
 
@@ -122,67 +122,24 @@ hi EndOfBuffer guibg=NONE ctermbg=NONE
 set laststatus=2			" Always show status line (0 to disable)
 set noshowmode				" Do not show "-- INSERT --" after the status line
 set splitright
+
 let g:airline_theme = 'codedark'
-"
+
 " This was on, it would show "SPELL [EN_CA]" beside mode
-let g:airline_detect_spell=0 " Turn off spell detection. Default = 1. If
+" let g:airline_detect_spell=0 " Turn off spell detection. Default = 1. If
 
 let g:airline#extensions#whitespace#enabled = 0 " Disable errors on RS of bar
-"  let g:airline_section_a       (mode, crypt, paste, spell, iminsert)
-"  let g:airline_section_b       (hunks, branch)[*]
-"  let g:airline_section_c       (bufferline or filename, readonly)
-"  let g:airline_section_gutter  (csv)
-"  let g:airline_section_x       (tagbar, filetype, virtualenv)
-"  let g:airline_section_y       (fileencoding, fileformat, 'bom', 'eol')
-"  let g:airline_section_z       (percentage, line number, column number)
-"  let g:airline_section_error   (ycm_error_count, syntastic-err, eclim,
-"                                 languageclient_error_count)
-"  let g:airline_section_warning (ycm_warning_count, syntastic-warn,
-"                                 languageclient_warning_count, whitespace)
-
-" let g:airline_detect_whitespace=0
-
-" 2022 04 13
-let g:word_count=wordcount().words
-function WordCount()
-    if has_key(wordcount(),'visual_words')
-        let g:word_count=wordcount().visual_words " count selected words
-    else
-        let g:word_count=wordcount().cursor_words " or shows words 'so far'
-    endif
-    return g:word_count
-endfunction
-
-function! Stl_P()
-	return line('.') * 100 / line('$') . '%'
-endfunction
-
-call airline#parts#define('wordsH', {'function': 'WordCount', 'accents': 'bold'})
-call airline#parts#define('percentage', {'function': 'Stl_P', 'accents': 'bold'})
-
 
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
-" let g:airline_left_sep='|' " Left separator
+let g:airline_left_sep='|' " Left separator
 let g:airline_right_sep='|' " Right separator
-" let g:airline_detect_modified=1
-" let g:airline_symbols.maxlinenr = 'L' " Replacing '☰ '
+let g:airline_detect_modified=1
+let g:airline_symbols.maxlinenr = 'L' " Replacing '☰ '
 let g:airline_symbols.linenr = 'L'
 let g:airline_symbols.colnr = 'C'
 let g:airline_symbols.words = 'W'
-
-
-let g:airline#extensions#hunks#coc_git = 1
-au VimEnter * let [g:airline_section_x, g:airline_section_b] = [airline#section#create(['hunks']), airline#section#create(['branch'])]
-
-" let g:airline_section_x = airline#section#create_right(['filetype', ' ', 'crypt'])
-let g:airline_section_x = airline#section#create_right(['filetype', ' ', 'percentage', ' ', 'linenr', ' ', 'colnr', ' ', 'wordsH'])
-let g:airline_section_y = ""
-let g:airline_section_z = ""
-" let g:airline_section_z = airline#section#create_right([])
-
-let g:airline#extensions#hunks#enabled = 1
 
 " remove separators for empty sections
 let g:airline_skip_empty_sections = 1
