@@ -181,6 +181,7 @@ nnoremap H i<Enter><Esc>
 autocmd FileType tex	inoremap	;b		\textbf{}<Esc>T{i
 autocmd FileType tex	inoremap	;i		\textit{}<Esc>T{i
 autocmd FileType tex	inoremap	;h		\textit{()}<Esc>T(i
+autocmd FileType tex	inoremap	;qr		\begin{center}<Enter>% \usepackage{qrcode}<Enter>\qrcode[hyperlink]{}<Enter>\end{center}<Esc>kf{a
 autocmd FileType tex	inoremap	;ul		\underline{}<Esc>T{i
 autocmd FileType tex	inoremap	`		`'<Left>
 autocmd FileType tex	inoremap	$		$$<Left>
