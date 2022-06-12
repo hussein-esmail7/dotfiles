@@ -82,7 +82,7 @@ alias vimrc="$EDITOR ~/git/dotfiles/vimrc.vim"	# Open vimrc quickly
 alias weather='curl wttr.in/Toronto'
 alias wget='wget -crq --show-progress'
 alias yt='yt-dlp -ic -R 100 --no-check-certificate --yes-playlist --skip-unavailable-fragments --restrict-filenames --sub-lang en --no-warnings --embed-subs --no-part -f best  -o "%(title)s.%(ext)s"'
-alias yta='${HOME}/${CODE}/sh/yta.sh'
+alias yta='${HOME}/${GIT}/sh/yta.sh'
 alias ytw='${HOME}/${CODE}/sh/ytw.sh'
 alias z='zathura'
 # zoom-vol: When I use Zoom, it randomly lowers my microphone sensitivity.
