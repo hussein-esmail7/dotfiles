@@ -40,6 +40,7 @@ alias pyf='cd ~/Documents/Coding/py/Finished'
 alias vcp="cd '/home/hussein/Documents/School/VCP/1 2021-22'"
 alias s="cd ~/Documents/School"
 alias g="cd ~/git"
+alias yc="cd ~/git/yorku-class-scraper"
 
 # Compile file program
 alias c='${HOME}/${GIT}/sh/c.sh'
