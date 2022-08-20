@@ -66,6 +66,7 @@ alias news='pkill news ; newsboat -q' # Newsboat & also kill previous instances
 alias nicefont='toilet -f mono9'						# Nice title text
 alias notes='${HOME}/${GIT}/sh/notes.sh' # Program that opens school notes file
 alias now='date +"%Y %m %d"'
+alias nurls='$EDITOR ~/.config/newsboat/urls'
 alias pass='${HOME}/${CODE}/sh/pass.sh' # Program that generates a password
 alias pdf='${HOME}/${CODE}/sh/pdf.sh'
 alias plex='${HOME}/${GIT}/sh/plex.sh' # Program that tells if someone is using this computer to watch a movie via Plex Media Server
