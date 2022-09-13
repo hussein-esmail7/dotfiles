@@ -87,6 +87,7 @@ alias yt='yt-dlp -ic -R 100 --no-check-certificate --yes-playlist --skip-unavail
 alias yta='${HOME}/${GIT}/sh/yta.sh'
 alias ytw='${HOME}/${CODE}/sh/ytw.sh'
 alias z='zathura'
+alias :q='exit'
 # zoom-vol: When I use Zoom, it randomly lowers my microphone sensitivity.
 #	This constantly sets it to 100% (which is what it should stay at)
 
