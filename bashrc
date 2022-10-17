@@ -23,10 +23,18 @@ export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 musikcube # Used to get musikcube to 
 
 
 # Setting history to unlimited
-export HISTSIZE=-1
-export HISTFILESIZE=-1
+# Setting to -1 in macOS Monterrey caused Terminal Scrollback to stop entirely
+export HISTSIZE=100000000000000000000000000
+export HISTFILESIZE=100000000000000000000000000
 
 export BASH_SILENCE_DEPRECATION_WARNING=1 # Get rid of "The interactive shell is zsh" message
+
+
+# Set CLICOLOR if you want Ansi Colors in iTerm2
+export CLICOLOR=1
+
+# Set colors to match iTerm2 Terminal Colors
+export TERM=xterm-256color
 
 # Personal Variables used while in Terminal
 export SCHOOL="~/Documents/School/1\ Y3W"
@@ -63,6 +71,7 @@ alias mkv='${HOME}/${CODE}/sh/mkv.sh'
 alias music='musikcube'
 alias mv='mv -i'
 alias news='pkill news ; newsboat -q' # Newsboat & also kill previous instances
+alias n='pkill news ; newsboat -q' # Newsboat & also kill previous instances
 alias nicefont='toilet -f mono9'						# Nice title text
 alias notes='${HOME}/${GIT}/sh/notes.sh' # Program that opens school notes file
 alias now='date +"%Y %m %d"'
@@ -88,6 +97,16 @@ alias yta='${HOME}/${GIT}/sh/yta.sh'
 alias ytw='${HOME}/${CODE}/sh/ytw.sh'
 alias z='zathura'
 alias :q='exit'
+
+function vf() {
+	A="$(ls -1 | grep -E '.tex|.md|.txt|.py|.vim|.sh' | fzf)"
+	if [ ${#A} -ne 0 ] ; then
+		$EDITOR "$A"
+	else
+		echo -e "[\e[32mERROR\e[0m] No file selected!"
+	fi
+
+}
 # zoom-vol: When I use Zoom, it randomly lowers my microphone sensitivity.
 #	This constantly sets it to 100% (which is what it should stay at)
 

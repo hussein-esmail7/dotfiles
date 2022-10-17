@@ -26,6 +26,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
 Plug 'chrisbra/changesPlugin'
 Plug 'tomtom/quickfixsigns_vim'
+Plug 'jacoborus/tender.vim'
+Plug 'morhetz/gruvbox'
 " Plug 'neoclide/coc-git'
 
 call plug#end()
@@ -35,6 +37,7 @@ call plug#end()
 " =============================================================================
 
 syntax on
+set bg=light
 
 scriptencoding utf-8
 set encoding=utf-8
@@ -73,6 +76,7 @@ set whichwrap+=>,l	" Line wrapping
 set autoread		" Reload files if changed externally
 set whichwrap+=<,h	" Line wrapping
 set lazyredraw		" redraw only when we need to.
+set t_Co=256 " This line is required for color schemes to work on iTerm on Mac
 
 " Use case insensitive search, except when using capital letters
 set ignorecase
@@ -107,6 +111,7 @@ let g:tex_indent_items=0
 " =============================================================================
 
 colorscheme codedark
+" colorscheme tender
 set background=dark
 
 " Allow transparent background in vim
@@ -117,6 +122,15 @@ hi Normal guibg=NONE ctermbg=NONE
 hi NonText guibg=NONE ctermbg=NONE
 
 hi EndOfBuffer guibg=NONE ctermbg=NONE
+
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+" set airline theme
+let g:airline_theme = 'tender'
+
+let macvim_skip_colorscheme=1
 
 " =============================================================================
 " === Status Line ============================================================
@@ -163,8 +177,8 @@ au BufReadPost *
 
 """ Command line maps
 " Compiler program: https://github.com/hussein-esmail7/sh/blob/main/c.sh to F5
-map <f5> :!~/git/sh/c.sh -q %<cr><ENTER>
-map <f6> :!~/git/sh/c.sh -q -o %<cr><ENTER>
+map <f5> :!~/git/sh/c.sh -q "%"<cr><ENTER>
+map <f6> :!~/git/sh/c.sh -o "%"<cr><ENTER>
 map <f7> :setlocal spell! spelllang=en_ca<CR>
 """ Normal Mode Shortcuts
 nnoremap <C-J> <C-W><C-J>
