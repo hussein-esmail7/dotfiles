@@ -29,8 +29,14 @@ Plug 'tomtom/quickfixsigns_vim'
 Plug 'jacoborus/tender.vim'
 Plug 'morhetz/gruvbox'
 " Plug 'neoclide/coc-git'
+"
+" HUSSEIN'S TEST ITEMIZE RELINE PLUGIN
+" 2022 12 12
+" Plug '$HOME/Downloads/testitem.vim'
 
 call plug#end()
+
+
 
 " =============================================================================
 " === General ================================================================
@@ -42,7 +48,7 @@ set bg=light
 scriptencoding utf-8
 set encoding=utf-8
 
-set tabstop=4
+set tabstop=4		" Number of spaces <Tab> counts for
 set softtabstop=4
 set shiftwidth=4
 set noswapfile		" Does not create .swap files in each folder
@@ -170,6 +176,71 @@ let g:airline_skip_empty_sections = 1
 au BufReadPost *
 \ if line("'\"") > 0 && line("'\"") <= line("$") && &filetype != "gitcommit" |
 \ execute("normal `\"") | endif
+
+
+fu! TextWrap(text, width, indent)
+	let l:line = ''
+	let l:ret = ''
+	for word in split(a:text)
+		if strdisplaywidth(l:line) + strdisplaywidth(word) + 1 > a:width
+			if strdisplaywidth(l:ret)
+				let l:ret .= "\n"
+			endif
+			let l:ret .= "\t" . l:line
+			let l:line = ''
+		endif
+		if strdisplaywidth(l:line)
+			let line .= ' '
+		endif
+		let l:line .= word
+	endfor
+	let l:ret .= "\n" . l:line
+	exe "normal! o" . l:ret . "\<Esc>"
+endfu
+
+
+
+" Wrap item lines in LaTeX
+function WrapItemLine() 
+	" abort at the above line means abortable if the function fails
+	let ft = &filetype
+	let wi = &colorcolumn
+	let indent = 8
+	if ft == 'tex'
+		if wi != 0
+			let wi = 80
+		endif
+		let line1=getline('.')
+		" echom stridx(line, "\\item")
+		if stridx(line1, "\\item")
+			" echom "tabs: " . count(line1, "\t")
+			" If line begins with the item marker, wrap the line
+			let l:line = ''
+			let l:ret = ''
+			for word in split(line)
+				if len(l:line) + len(word) + 1 > a:wi
+					if len(l:ret)
+						let l:ret .= "\n"	
+					endif
+					let l:ret .= repeat(' ', indent) . l:line
+					let l:line = ''
+				endif
+				if len(l:line)
+					let l:line .= ' '
+				endif
+				let l:line .= word
+			endfor
+			let l:ret .= "\n" . repeat(' ', indent) . l:line
+			return l:ret
+		endif
+	endif
+endfunction
+
+
+
+
+
+
 
 " =============================================================================
 " === Remaps =================================================================
