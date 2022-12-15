@@ -177,16 +177,37 @@ au BufReadPost *
 \ if line("'\"") > 0 && line("'\"") <= line("$") && &filetype != "gitcommit" |
 \ execute("normal `\"") | endif
 
-
 fu! TextWrap(text, width, indent)
+	" 2022 12 14 (Wed)
+	" ==== What does this function do? ====
+	" When I type in LaTeX, I like list items (starting with '\item') with
+	" multiple likes to be indented another level than the first line, so you can
+	" clearly see where the next point is as well. This is similar to how I take
+	" notes on paper as well so I want my typed notes to reflect that as well.
+	" Before I wrote this function, I would run 'gqq' on the line, reindent the
+	" second line, run 'J' until the rest of the lines below the second line
+	" return to the second line, then run 'gqq' again.
 	let l:line = ''
 	let l:ret = ''
+	" Determining the initial indentation level of the line
+	let tabnum = indent('.') " Indentation level measured in characters
+	let l:width = a:width - l:tabnum
+	" TODO: Replace the a:width argument entirely with &colorcolumn
 	for word in split(a:text)
-		if strdisplaywidth(l:line) + strdisplaywidth(word) + 1 > a:width
+		if strdisplaywidth(l:line) + strdisplaywidth(word) >= l:width
 			if strdisplaywidth(l:ret)
+				" if l:ret is not empty
 				let l:ret .= "\n"
 			endif
-			let l:ret .= "\t" . l:line
+			if count(l:ret, "\n") == 0
+				" Decrease the new width because it's about to be indented once more. This needs to be done when '\n' == 0 because it's before the next iteration checks for the next line. At that point, the width of that line is set in stone
+				let l:width -= a:indent " Decrease the allowed chars for the new indent
+			endif
+			if count(l:ret, "\n") == 1
+				" Increase the indentation by 1 on the second line (when '\n' == 1). Any further lines would follow the same indentation level
+				let l:ret .= "\t"
+			endif
+			let l:ret .= l:line
 			let l:line = ''
 		endif
 		if strdisplaywidth(l:line)
@@ -194,52 +215,14 @@ fu! TextWrap(text, width, indent)
 		endif
 		let l:line .= word
 	endfor
-	let l:ret .= "\n" . l:line
-	exe "normal! o" . l:ret . "\<Esc>"
-endfu
-
-
-
-" Wrap item lines in LaTeX
-function WrapItemLine() 
-	" abort at the above line means abortable if the function fails
-	let ft = &filetype
-	let wi = &colorcolumn
-	let indent = 8
-	if ft == 'tex'
-		if wi != 0
-			let wi = 80
-		endif
-		let line1=getline('.')
-		" echom stridx(line, "\\item")
-		if stridx(line1, "\\item")
-			" echom "tabs: " . count(line1, "\t")
-			" If line begins with the item marker, wrap the line
-			let l:line = ''
-			let l:ret = ''
-			for word in split(line)
-				if len(l:line) + len(word) + 1 > a:wi
-					if len(l:ret)
-						let l:ret .= "\n"	
-					endif
-					let l:ret .= repeat(' ', indent) . l:line
-					let l:line = ''
-				endif
-				if len(l:line)
-					let l:line .= ' '
-				endif
-				let l:line .= word
-			endfor
-			let l:ret .= "\n" . repeat(' ', indent) . l:line
-			return l:ret
-		endif
+	if len(l:ret)
+		let l:ret .= "\n" . l:line " Add the last line
+	else
+		let l:ret .= l:line " Add the last line
 	endif
-endfunction
-
-
-
-
-
+	" Change the line in the file
+	exe "normal! cc" . l:ret . "\<Esc>"
+endfu
 
 
 " =============================================================================
@@ -251,6 +234,7 @@ endfunction
 map <f5> :!~/git/sh/c.sh -q "%"<cr><ENTER>
 map <f6> :!~/git/sh/c.sh -o "%"<cr><ENTER>
 map <f7> :setlocal spell! spelllang=en_ca<CR>
+map <f8> :call TextWrap(getline('.'), 80, 4)<CR>
 """ Normal Mode Shortcuts
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
