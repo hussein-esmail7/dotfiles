@@ -202,6 +202,7 @@ fu! TextWrap(text, width, indent)
 			if count(l:ret, "\n") == 0
 				" Decrease the new width because it's about to be indented once more. This needs to be done when '\n' == 0 because it's before the next iteration checks for the next line. At that point, the width of that line is set in stone
 				let l:width -= a:indent " Decrease the allowed chars for the new indent
+				let l:ret .= repeat(" ", tabnum) " Reindent 1st line to the same level as before
 			endif
 			if count(l:ret, "\n") == 1
 				" Increase the indentation by 1 on the second line (when '\n' == 1). Any further lines would follow the same indentation level
@@ -221,7 +222,7 @@ fu! TextWrap(text, width, indent)
 		let l:ret .= l:line " Add the last line
 	endif
 	" Change the line in the file
-	exe "normal! cc" . l:ret . "\<Esc>"
+	exe "normal! 0C" . l:ret . "\<Esc>"
 endfu
 
 
