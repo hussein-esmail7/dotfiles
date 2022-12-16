@@ -193,6 +193,10 @@ fu! TextWrap(text, width, indent)
 	let tabnum = indent('.') " Indentation level measured in characters
 	let l:width = a:width - l:tabnum
 	" TODO: Replace the a:width argument entirely with &colorcolumn
+	" TODO: Issue on 2022 12 05 (Thu) -- When a line would wrap to 2 lines (second line does not "		reach 80 characters), the indentation level of the second line is the same as the
+	"		first.
+	" TODO: Issue on 2022 12 05 (Thu) -- When a line is smaller than 80 charactesr overall and
+	"		does not wrap at all, it removes all indentation level of that line.
 	for word in split(a:text)
 		if strdisplaywidth(l:line) + strdisplaywidth(word) >= l:width
 			if strdisplaywidth(l:ret)
@@ -235,7 +239,7 @@ endfu
 map <f5> :!~/git/sh/c.sh -q "%"<cr><ENTER>
 map <f6> :!~/git/sh/c.sh -o "%"<cr><ENTER>
 map <f7> :setlocal spell! spelllang=en_ca<CR>
-map <f8> :call TextWrap(getline('.'), 80, 4)<CR>
+map <f8> :call TextWrap(getline('.'), 79, 4)<CR>
 """ Normal Mode Shortcuts
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -267,6 +271,12 @@ autocmd FileType tex	inoremap	;ltable	\begin{longtable}{l p{12cm}}<Enter>& \\<En
 
 """ HTML
 autocmd FileType html	inoremap	<		<></><Esc>4hi
+autocmd FileType html	inoremap	;h1		<h1></h1><Esc>4ba
+autocmd FileType html	inoremap	;h2		<h2></h2><Esc>4ba
+autocmd FileType html	inoremap	;h3		<h3></h3><Esc>4ba
+autocmd FileType html	inoremap	;h4		<h4></h4><Esc>4ba
+autocmd FileType html	inoremap	;h5		<h5></h5><Esc>4ba
+autocmd FileType html	inoremap	;h6		<h6></h6><Esc>4ba
 autocmd FileType css	inoremap	{		{<Enter><Tab><Enter>}<Esc>k0xA
 autocmd FileType css	inoremap	//		/*  */<Esc>2hi
 " TODO: Following line does not do anything yet. Maybe vim thinks there's comment?
