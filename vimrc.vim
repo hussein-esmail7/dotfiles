@@ -65,6 +65,7 @@ set showtabline=2	" Always show tabline
 set spelllang=en_ca	" Default language
 set cursorline		" Highlight the line the cursor is on
 set hlsearch		" Highlight items when searching them
+set nrformats-=octal " When doing g<Ctrl-a>, treat numbers as base 10 not 8
 
 set showcmd			" Show commands in bottom right corner while typing it
 set ruler			" Shows the column and row num the cursor is on
