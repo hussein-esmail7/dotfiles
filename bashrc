@@ -76,12 +76,11 @@ alias ni='${HOME}/${GIT}/notebook-index/notebook-index.sh' # Notebook index prog
 alias nicefont='toilet -f mono9'						# Nice title text
 alias notes='${HOME}/${GIT}/sh/notes.sh' # Program that opens school notes file
 alias now='date +"%Y %m %d"'
-alias nurls='$EDITOR ~/.config/newsboat/urls'
 alias pass='${HOME}/${CODE}/sh/pass.sh' # Program that generates a password
 alias pdf='${HOME}/${CODE}/sh/pdf.sh'
 alias plex='${HOME}/${GIT}/sh/plex.sh' # Program that tells if someone is using this computer to watch a movie via Plex Media Server
 alias poly='/home/hussein/.config/polybar/launch.sh' # Launches polybar on Linux
-alias rss="newsboat -x reload ; python3 ${HOME}/git/rss-parsers/all.py"
+alias rss="${HOME}/git/dotfiles/rss.sh"
 alias rm='rm -i'
 alias school='cd && cd "$HOME/Documents/School - 1 University/1 Y1SU" && open .'
 alias server='python3 -m http.server'
@@ -124,6 +123,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then # Linux System
     alias y="yay"
     alias p="sudo pacman"
     alias ytfzf="ytfzf -t --preview-side=right"
+	alias nurls='$EDITOR ~/.config/newsboat/urls'
 	export PATH=$PATH:/usr/local/texlive/2021/bin/x86_64-linux
 	export MANPATH=$MANPATH:/usr/local/texlive/2021/texmf-dist/doc/man
 	export INFOPATH=$INFOPATH:/usr/local/texlive/2021/texmf-dist/doc/info
@@ -138,6 +138,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS System
 	alias todo='open ${HOME}/Downloads/todo.txt' # Quickly open my todo list
     alias spot='open `spot-f`'
     alias text='${HOME}/Documents/Coding/sh/text.sh'
+	alias nurls='$EDITOR ~/.newsboat/urls'
 fi
 
 
