@@ -6,6 +6,7 @@
 #                                      ▄  █
 #                                       ▀▀
 
+cd ${HOME}
 export EDITOR=vim
 export BROWSER=/usr/bin/brave       # Default browser to Brave instead of Firefox
 export CLICOLOR=1
@@ -92,7 +93,7 @@ alias v="vim"											# Editor shortcut
 alias vimrc="$EDITOR ~/git/dotfiles/vimrc.vim"	# Open vimrc quickly
 alias weather='curl wttr.in/Toronto'
 alias wget='wget -crq --show-progress'
-alias yt='yt-dlp -ic -R 100 --no-check-certificate --yes-playlist --skip-unavailable-fragments --restrict-filenames --sub-lang en --no-warnings --embed-subs --no-part -f best  -o "%(title)s.%(ext)s"'
+alias yt='yt-dlp -ic -R 100 --no-check-certificate --yes-playlist --skip-unavailable-fragments --restrict-filenames --sub-lang en --no-warnings --embed-subs --no-part -f best  -o "%(upload_date>%Y)s %(upload_date>%m)s %(upload_date>%d)s %(title)s.%(ext)s"'
 alias yta='${HOME}/${GIT}/sh/yta.sh'
 alias ytw='${HOME}/${CODE}/sh/ytw.sh'
 alias z='zathura'
