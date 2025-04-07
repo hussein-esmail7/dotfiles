@@ -11,6 +11,7 @@ export EDITOR=vim
 export BROWSER=/usr/bin/brave       # Default browser to Brave instead of Firefox
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
+export HOMEBREW_NO_ENV_HINTS=1 # Hide homebrew hints on macOS
 
 export PATH=$PATH:/usr/bin
 export PATH=$PATH:/bin
@@ -19,14 +20,15 @@ export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/X11/bin
 export PATH=$PATH:$HOME/.local/bin
-export PYTHONPATH=$PYTHONPATH:$HOME/test/site-packages
 export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 musikcube # Used to get musikcube to work
+export PATH=/usr/texbin:/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=/usr/local/texlive/2025basic/bin/universal-darwin:$PATH
 
 
-# Setting history to unlimited
-# Setting to -1 in macOS Monterrey caused Terminal Scrollback to stop entirely
-export HISTSIZE=100000000000000000000000000
-export HISTFILESIZE=100000000000000000000000000
+# Setting history to 5000
+export HISTFILESIZE=5000
+export HISTSIZE=5000
+export HISTTIMEFORMAT="[%Y %m %d %I:%M:%S %p] "
 
 export BASH_SILENCE_DEPRECATION_WARNING=1 # Get rid of "The interactive shell is zsh" message
 
@@ -53,6 +55,7 @@ alias yc="cd ~/git/yorku-class-scraper"
 
 # Compile file program
 alias c='${HOME}/${GIT}/sh/c.sh'
+alias c2='${HOME}/Downloads/c2.sh'
 
 # Always copy recursively, in case I'm copying a folder
 alias cp='cp -r'
@@ -73,15 +76,15 @@ alias music='musikcube'
 alias mv='mv -i'
 alias news='pkill news ; newsboat -q' # Newsboat & also kill previous instances
 alias n='pkill news ; newsboat -q' # Newsboat & also kill previous instances
-alias ni='${HOME}/${GIT}/nindex/nindex.sh' # Notebook index program
+alias ni='python3 ${HOME}/${GIT}/nindex/nindex.py' # Notebook index program
 alias nicefont='toilet -f mono9'						# Nice title text
 alias notes='${HOME}/${GIT}/sh/notes.sh' # Program that opens school notes file
-alias now='date +"%Y %m %d"'
+alias now='date "+%Y %m %d %H:%M:%S"'
 alias pass='${HOME}/${CODE}/sh/pass.sh' # Program that generates a password
 alias pdf='${HOME}/${CODE}/sh/pdf.sh'
 alias plex='${HOME}/${GIT}/sh/plex.sh' # Program that tells if someone is using this computer to watch a movie via Plex Media Server
 alias poly='/home/hussein/.config/polybar/launch.sh' # Launches polybar on Linux
-alias rss="${HOME}/git/dotfiles/rss.sh"
+alias rss="cd ~ ; source .venv/bin/activate ; ${HOME}/git/dotfiles/rss.sh ; deactivate"
 alias rm='rm -i'
 alias school='cd && cd "$HOME/Documents/School - 1 University/1 Y1SU" && open .'
 alias server='python3 -m http.server'
@@ -93,7 +96,9 @@ alias v="vim"											# Editor shortcut
 alias vimrc="$EDITOR ~/git/dotfiles/vimrc.vim"	# Open vimrc quickly
 alias weather='curl wttr.in/Toronto'
 alias wget='wget -crq --show-progress'
-alias yt='yt-dlp -ic -R 100 --no-check-certificate --yes-playlist --skip-unavailable-fragments --restrict-filenames --sub-lang en --no-warnings --embed-subs --no-part -f best  -o "%(upload_date>%Y)s %(upload_date>%m)s %(upload_date>%d)s %(title)s.%(ext)s"'
+alias yt='yt-dlp --no-check-certificate --yes-playlist --embed-subs --embed-subs --write-auto-subs --sub-lang "en.*" -S vcodec:h264,res,acodec:m4a --recode mp4 -o "%(upload_date>%Y)s %(upload_date>%m)s %(upload_date>%d)s %(title)s.%(ext)s"'
+alias ytf='yt-dlp --no-check-certificate --yes-playlist --embed-subs --embed-subs --write-auto-subs --sub-lang "en.*" -S vcodec:h264,res,acodec:m4a --recode mp4 -o "%(channel)s/%(upload_date>%Y)s %(upload_date>%m)s %(upload_date>%d)s %(title)s.%(ext)s"'
+alias ytq='yt-dlp --quiet --no-check-certificate --yes-playlist --embed-subs --embed-subs --write-auto-subs --sub-lang "en.*" -S vcodec:h264,res,acodec:m4a --recode mp4 -o "%(upload_date>%Y)s %(upload_date>%m)s %(upload_date>%d)s %(title)s.%(ext)s"'
 alias yta='${HOME}/${GIT}/sh/yta.sh'
 alias ytw='${HOME}/${CODE}/sh/ytw.sh'
 alias z='zathura'
@@ -125,7 +130,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then # Linux System
     alias p="sudo pacman"
     alias ytfzf="ytfzf -t --preview-side=right"
 	alias nurls='$EDITOR ~/.config/newsboat/urls'
-	export PATH=$PATH:/usr/local/texlive/2021/bin/x86_64-linux
+	export PATH=$PATH:/usr/local/texlive/2023basic/tlpkg
 	export MANPATH=$MANPATH:/usr/local/texlive/2021/texmf-dist/doc/man
 	export INFOPATH=$INFOPATH:/usr/local/texlive/2021/texmf-dist/doc/info
 elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS System
@@ -141,6 +146,11 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS System
     alias text='${HOME}/Documents/Coding/sh/text.sh'
 	alias nurls='$EDITOR ~/.newsboat/urls'
 fi
+
+## pdftex-quiet configuration {START}
+# https://gitlab.com/jirislav/pdftex-quiet/
+# alias pdflatex='pdftex-quiet'
+## pdftex-quiet configuration {END}
 
 
 function sitepush() {
@@ -223,6 +233,19 @@ function plural() {
 function search_history() {
 	history | grep $1
 }
+
+function bookinfo() {
+	# pip install isbntools
+	if [ ! -z $1 ] ; then
+		isbn_meta $1 tex
+	else
+		echo "ISBN number required"
+	fi
+}
+
+# This command allows bashrc shortcuts to be run within the Vim terminal
+# https://stackoverflow.com/a/51895549/8100123
+shopt -s expand_aliases
 
 # All in green: {username} @ YYYY MM DD HH:mm: {Current dir}
 # PS1="\[\e[32m\]\u @ \$(date '+%Y %m %d %I:%M'):\[\e[00m\] \W (\$(ls -1 | wc -l | sed 's: ::g') file\$(plural)) > "

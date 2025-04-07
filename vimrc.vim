@@ -41,6 +41,8 @@ call plug#end()
 " =============================================================================
 " === General ================================================================
 " =============================================================================
+"
+let $BASH_ENV = "~/.bashrc"
 
 syntax on
 set bg=light
@@ -237,8 +239,8 @@ endfu
 
 """ Command line maps
 " Compiler program: https://github.com/hussein-esmail7/sh/blob/main/c.sh to F5
-map <f5> :!~/git/sh/c.sh -q "%"<cr><ENTER>
-map <f6> :!~/git/sh/c.sh -o "%"<cr><ENTER>
+map <f5> :!~/git/sh/c.sh -q "%:p"<CR><CR>
+map <f6> :!~/git/sh/c.sh -o "%:p"<CR><CR>
 map <f7> :setlocal spell! spelllang=en_ca<CR>
 map <f8> :call TextWrap(getline('.'), 79, 4)<CR>
 """ Normal Mode Shortcuts
@@ -294,6 +296,8 @@ autocmd FileType c	inoremap	///		/*  */<Esc>2hi
 autocmd FileType tex	inoremap	;;		\item<Space>
 " New environment
 autocmd FileType tex	inoremap	;env	\begin{}<Enter>\end{}<Esc>k$i
+" New flushright environment
+autocmd FileType tex	inoremap	;r	\begin{flushright}<Enter>\end{flushright}<Esc>O\textit{}<Esc>i
 " New figure environment
 autocmd FileType tex	inoremap	;fig	\begin{figure}<Enter>\end{figure}<Esc>k$i
 " New itemize environment
