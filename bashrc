@@ -45,13 +45,10 @@ export GIT='git'
 export CODE='Documents/Coding'
 export SITE='/hdd1/Website/husseinesmail'
 
-# Quickly cd into my Python directory
-alias py='cd ~/Documents/Coding/py'
-alias pyf='cd ~/Documents/Coding/py/Finished'
-alias vcp="cd '/home/hussein/Documents/School/VCP/1 2021-22'"
-alias s="cd ~/Documents/School"
-alias g="cd ~/git"
-alias yc="cd ~/git/yorku-class-scraper"
+alias py='cd ~/Documents/Coding/py' # Quickly cd into directory
+alias pyv='source ~/.venv/bin/activate' # Activate Python virtual environment
+alias pyf='cd ~/Documents/Coding/py/Finished' # Quickly cd into directory
+alias g="cd ~/git" # Quickly cd into directory
 
 # Compile file program
 alias c='${HOME}/${GIT}/sh/c.sh'
@@ -103,6 +100,7 @@ alias yta='${HOME}/${GIT}/sh/yta.sh'
 alias ytw='${HOME}/${CODE}/sh/ytw.sh'
 alias z='zathura'
 alias :q='exit'
+alias op='cd /Users/hussein/Library/CloudStorage/OneDrive-Personal/0\ Ongoing\ Projects'
 
 function vf() {
 	A="$(ls -1 | grep -E '.tex|.md|.txt|.py|.vim|.sh' | fzf)"
