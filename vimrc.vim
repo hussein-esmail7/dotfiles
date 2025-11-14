@@ -34,6 +34,9 @@ Plug 'morhetz/gruvbox'
 " 2022 12 12
 " Plug '$HOME/Downloads/testitem.vim'
 
+" github.com/RRethy/vim-hexokinase - colour squares in CSS files
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+
 call plug#end()
 
 
@@ -115,6 +118,7 @@ autocmd bufwritepost vimrc.vim source %
 " Disable re-indenting open brackets in .tex files
 " https://vi.stackexchange.com/a/13752
 let g:tex_indent_items=0
+
 " =============================================================================
 " === Colour Theme ===========================================================
 " =============================================================================
@@ -140,6 +144,36 @@ endif
 let g:airline_theme = 'tender'
 
 let macvim_skip_colorscheme=1
+
+" =============================================================================
+" === Colour Boxes in CSS Files when Colour Codes (Hex, RGB, etc) present =====
+" =============================================================================
+
+" github.com/RRethy/vim-hexokinase
+let g:Hexokinase_highlighters = [ 'sign_column' ]
+
+" Patterns to match for all filetypes
+" Can be a comma separated string or a list of strings
+" Default value:
+let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla,colour_names'
+
+" All possible values
+let g:Hexokinase_optInPatterns = [
+\     'full_hex',
+\     'triple_hex',
+\     'rgb',
+\     'rgba',
+\     'hsl',
+\     'hsla',
+\     'colour_names'
+\ ]
+
+" Filetype specific patterns to match
+" entry value must be comma seperated list
+let g:Hexokinase_ftOptInPatterns = {
+\     'css': 'full_hex,rgb,rgba,hsl,hsla,colour_names',
+\     'html': 'full_hex,rgb,rgba,hsl,hsla,colour_names'
+\ }
 
 " =============================================================================
 " === Status Line ============================================================
@@ -240,7 +274,7 @@ endfu
 """ Command line maps
 " Compiler program: https://github.com/hussein-esmail7/sh/blob/main/c.sh to F5
 map <f5> :!~/git/sh/c.sh -q "%:p"<CR><CR>
-map <f6> :!~/git/sh/c.sh -o "%:p"<CR><CR>
+map <f6> :!~/git/sh/c.sh -o -q "%:p"<CR><CR>
 map <f7> :setlocal spell! spelllang=en_ca<CR>
 map <f8> :call TextWrap(getline('.'), 79, 4)<CR>
 """ Normal Mode Shortcuts
