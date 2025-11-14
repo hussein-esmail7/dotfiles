@@ -60,3 +60,13 @@ sudo systemsetup -setrestartfreeze on
 # Install pip
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py
+
+# Commands to get the vim extension in VS Code to work
+# Must log out and back in for it to take effect
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false              # For VS Code
+defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false      # For VS Code Insider
+defaults write com.vscodium ApplePressAndHoldEnabled -bool false                      # For VS Codium
+defaults write com.microsoft.VSCodeExploration ApplePressAndHoldEnabled -bool false   # For VS Codium Exploration users
+defaults write com.exafunction.windsurf ApplePressAndHoldEnabled -bool false          # For Windsurf
+# defaults delete -g ApplePressAndHoldEnabled                                           # If necessary, reset global default
+
