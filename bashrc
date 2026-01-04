@@ -142,6 +142,17 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS System
     export PATH=$PATH:/Library/TeX/texbin//
     export PATH=$PATH:/usr/local/texlive/2020basic/bin/universal-darwin
 
+    # Telling LaTeX to look elsewhere - not normally needed
+    # https://www.maths.cam.ac.uk/computing/software/tex/package
+    export TEXINPUTS=".:$HOME/git/npage//.:$HOME/git/compact-title//::"
+	# This tells tex and latex to look for class/style files in the paths
+	# separated by ":". First it will look in the same directory as the file
+	# being compiled (.); then into ~/texpackages and their subdirectories
+	# (this is set by using double slashes at the end '//'), finally it will
+	# look into the central tex repository (::). You can put this line in your
+	# ~/.bashrc file so you have the environment set every time you open a
+	# terminal. If you use csh or variants, the syntax changes to
+
 	alias todo='open ${HOME}/Downloads/todo.txt' # Quickly open my todo list
     alias spot='open `spot-f`'
     alias text='${HOME}/Documents/Coding/sh/text.sh'
